@@ -34,7 +34,7 @@
             this.discordButton = new FontAwesome.Sharp.IconButton();
             this.mainToolBox = new System.Windows.Forms.Panel();
             this.onlineCounter = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.onlineCounterIcon = new FontAwesome.Sharp.IconPictureBox();
             this.settingsButton = new FontAwesome.Sharp.IconButton();
             this.minimizeButton = new FontAwesome.Sharp.IconButton();
             this.closeButton = new FontAwesome.Sharp.IconButton();
@@ -50,7 +50,7 @@
             this.serverStatusText = new System.Windows.Forms.Label();
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
             this.newsPanel.SuspendLayout();
             this.serverStatusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).BeginInit();
@@ -106,7 +106,7 @@
             // 
             this.mainToolBox.BackColor = System.Drawing.Color.Black;
             this.mainToolBox.Controls.Add(this.onlineCounter);
-            this.mainToolBox.Controls.Add(this.iconPictureBox1);
+            this.mainToolBox.Controls.Add(this.onlineCounterIcon);
             this.mainToolBox.Controls.Add(this.settingsButton);
             this.mainToolBox.Controls.Add(this.minimizeButton);
             this.mainToolBox.Controls.Add(this.closeButton);
@@ -127,18 +127,18 @@
             this.onlineCounter.TabIndex = 8;
             this.onlineCounter.Text = "Игроков онлайн: 56";
             // 
-            // iconPictureBox1
+            // onlineCounterIcon
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.iconPictureBox1.TabIndex = 10;
-            this.iconPictureBox1.TabStop = false;
+            this.onlineCounterIcon.BackColor = System.Drawing.Color.Transparent;
+            this.onlineCounterIcon.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.onlineCounterIcon.IconColor = System.Drawing.Color.White;
+            this.onlineCounterIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.onlineCounterIcon.IconSize = 25;
+            this.onlineCounterIcon.Location = new System.Drawing.Point(0, 0);
+            this.onlineCounterIcon.Name = "onlineCounterIcon";
+            this.onlineCounterIcon.Size = new System.Drawing.Size(25, 25);
+            this.onlineCounterIcon.TabIndex = 10;
+            this.onlineCounterIcon.TabStop = false;
             // 
             // settingsButton
             // 
@@ -333,7 +333,7 @@
             this.addLinksPanel.ResumeLayout(false);
             this.mainToolBox.ResumeLayout(false);
             this.mainToolBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).EndInit();
             this.newsPanel.ResumeLayout(false);
             this.serverStatusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
@@ -362,7 +362,7 @@
         private System.Windows.Forms.Panel serverStatusPanel;
         private System.Windows.Forms.Label serverStatusText;
         private FontAwesome.Sharp.IconPictureBox serrverStatusIcon;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox onlineCounterIcon;
     }
 }
 

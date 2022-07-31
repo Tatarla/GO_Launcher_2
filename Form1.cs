@@ -20,9 +20,11 @@ namespace GOR_Launcher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            addLinksPanel.BackColor     = Color.FromArgb(100, 40, 47, 99);
-            newsPanel.BackColor         = Color.FromArgb(100, 0, 0, 0);
-            serverStatusPanel.BackColor            = Color.FromArgb(50, 0, 255, 0);
+            addLinksPanel.BackColor                 = Color.FromArgb(100, 40, 47, 99);
+            newsPanel.BackColor                     = Color.FromArgb(100, 0, 0, 0);
+            serverStatusPanel.BackColor             = Color.FromArgb(50, 0, 255, 0);
+
+            CLocalization.Initialize();
         }
 
 
