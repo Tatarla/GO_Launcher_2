@@ -11,15 +11,39 @@ namespace GOR_Launcher
     public static class CLocalization
     {
         static ResourceManager resMan;
+        static Dictionary<string, string> langMap;
 
         public static void Initialize()
         {
+            RegisterLanguage("en_US", "English (US)");
+            RegisterLanguage("ru_RU", "Русский");
+
             SwapLanguage(Constants.DEFAULT_LANGUAGE);
         }
 
-        public static void SwapLanguage(string langName)
+        public static void RegisterLanguage(string code, string name)
         {
-            resMan = new ResourceManager("GOR_Launcher." + langName, Assembly.GetExecutingAssembly());
+            // Initializing langMap if its first language
+            if (langMap == null)
+                langMap = new Dictionary<string, string>();
+
+            langMap.Add(code, name);
+        }
+
+        public static bool IsLanguageExist(string code)
+        {
+            return langMap.ContainsKey(code);
+        }
+
+        public static bool SwapLanguage(string langName)
+        {
+            if (IsLanguageExist(langName))
+            {
+                resMan = new ResourceManager("GOR_Launcher." + langName, Assembly.GetExecutingAssembly());
+                return true;
+            }
+
+            return false;
         }
 
         public static string Get(string name)

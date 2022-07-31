@@ -20,11 +20,13 @@ namespace GOR_Launcher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            addLinksPanel.BackColor                 = Color.FromArgb(100, 40, 47, 99);
-            newsPanel.BackColor                     = Color.FromArgb(100, 0, 0, 0);
-            serverStatusPanel.BackColor             = Color.FromArgb(50, 0, 255, 0);
-
+            // Initializing default language
             CLocalization.Initialize();
+
+            // Initializing panel colors with alpha channel
+            addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
+            newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
+            serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
         }
 
 
@@ -50,7 +52,7 @@ namespace GOR_Launcher
 
         private void mainToolBox_MouseUp(object sender, MouseEventArgs e)
         {
-            b_MouseDown = false;
+            b_MouseDown     = false;
         }
 
         // **** //
