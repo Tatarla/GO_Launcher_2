@@ -40,9 +40,7 @@
             this.closeButton = new FontAwesome.Sharp.IconButton();
             this.mainProgressBar = new XanderUI.XUIFlatProgressBar();
             this.newsPanel = new System.Windows.Forms.Panel();
-            this.newsTitleLabel = new System.Windows.Forms.Label();
             this.playButton = new XanderUI.XUIButton();
-            this.webBrowserPanel = new System.Windows.Forms.Panel();
             this.nicknameInput = new System.Windows.Forms.TextBox();
             this.nicknameLabel = new System.Windows.Forms.Label();
             this.serverStatusPanel = new System.Windows.Forms.Panel();
@@ -51,7 +49,6 @@
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
-            this.newsPanel.SuspendLayout();
             this.serverStatusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).BeginInit();
             this.SuspendLayout();
@@ -212,21 +209,10 @@
             // 
             // newsPanel
             // 
-            this.newsPanel.Controls.Add(this.newsTitleLabel);
             this.newsPanel.Location = new System.Drawing.Point(12, 37);
             this.newsPanel.Name = "newsPanel";
             this.newsPanel.Size = new System.Drawing.Size(317, 380);
             this.newsPanel.TabIndex = 3;
-            // 
-            // newsTitleLabel
-            // 
-            this.newsTitleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newsTitleLabel.Location = new System.Drawing.Point(0, 0);
-            this.newsTitleLabel.Name = "newsTitleLabel";
-            this.newsTitleLabel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.newsTitleLabel.Size = new System.Drawing.Size(317, 380);
-            this.newsTitleLabel.TabIndex = 0;
-            this.newsTitleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // playButton
             // 
@@ -248,13 +234,6 @@
             this.playButton.TabIndex = 4;
             this.playButton.TextColor = System.Drawing.Color.Black;
             this.playButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
-            // webBrowserPanel
-            // 
-            this.webBrowserPanel.Location = new System.Drawing.Point(349, 37);
-            this.webBrowserPanel.Name = "webBrowserPanel";
-            this.webBrowserPanel.Size = new System.Drawing.Size(395, 247);
-            this.webBrowserPanel.TabIndex = 5;
             // 
             // nicknameInput
             // 
@@ -278,7 +257,7 @@
             this.serverStatusPanel.BackColor = System.Drawing.Color.Transparent;
             this.serverStatusPanel.Controls.Add(this.serrverStatusIcon);
             this.serverStatusPanel.Controls.Add(this.serverStatusText);
-            this.serverStatusPanel.Location = new System.Drawing.Point(349, 290);
+            this.serverStatusPanel.Location = new System.Drawing.Point(349, 37);
             this.serverStatusPanel.Name = "serverStatusPanel";
             this.serverStatusPanel.Size = new System.Drawing.Size(395, 35);
             this.serverStatusPanel.TabIndex = 9;
@@ -290,7 +269,7 @@
             this.serrverStatusIcon.IconColor = System.Drawing.Color.White;
             this.serrverStatusIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.serrverStatusIcon.IconSize = 35;
-            this.serrverStatusIcon.Location = new System.Drawing.Point(43, 0);
+            this.serrverStatusIcon.Location = new System.Drawing.Point(19, 2);
             this.serrverStatusIcon.Name = "serrverStatusIcon";
             this.serrverStatusIcon.Size = new System.Drawing.Size(35, 35);
             this.serrverStatusIcon.TabIndex = 10;
@@ -317,7 +296,6 @@
             this.Controls.Add(this.serverStatusPanel);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.nicknameInput);
-            this.Controls.Add(this.webBrowserPanel);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.newsPanel);
             this.Controls.Add(this.mainProgressBar);
@@ -334,7 +312,6 @@
             this.mainToolBox.ResumeLayout(false);
             this.mainToolBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).EndInit();
-            this.newsPanel.ResumeLayout(false);
             this.serverStatusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
             this.ResumeLayout(false);
@@ -353,10 +330,8 @@
         private FontAwesome.Sharp.IconButton settingsButton;
         private FontAwesome.Sharp.IconButton minimizeButton;
         private System.Windows.Forms.Panel newsPanel;
-        private System.Windows.Forms.Label newsTitleLabel;
         private System.Windows.Forms.Label onlineCounter;
         private XanderUI.XUIButton playButton;
-        private System.Windows.Forms.Panel webBrowserPanel;
         private System.Windows.Forms.TextBox nicknameInput;
         private System.Windows.Forms.Label nicknameLabel;
         private System.Windows.Forms.Panel serverStatusPanel;
