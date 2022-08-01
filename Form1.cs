@@ -24,6 +24,8 @@ namespace GOR_Launcher
             CLocalization.Initialize();
             CFileValidation.Initialize(mainProgressBar, mainProgressLabel);
 
+            CFileValidation.GetFileMD5("GOR_Launcher.exe");
+
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;

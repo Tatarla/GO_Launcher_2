@@ -15,6 +15,10 @@ namespace GOR_Launcher
         public static string BANNER_URL                     = "http://rgc-host.ru/testLauncher/banners/testBanner-{0}.png";
         public static string FILE_LIST_URL                  = "http://rgc-host.ru/testLauncher/files.xml";
         public static string FILE_DOWNLOAD_URL              = "http://rgc-host.ru/testLauncher/files/";
+        public static string VERSION_FILE_URL               = "http://rgc-host.ru/testLauncher/version.xml";
+
+        public static string CONFIG_FOLDER_PATH             = ".launcher/";
+        public static string VERSION_FILE_NAME              = "version.xml";
 
         public static Color LINKS_PANEL_COLOR               = Color.FromArgb(100, 40, 47, 99);
         public static Color NEWS_PANEL_COLOR                = Color.FromArgb(100, 0, 0, 0);

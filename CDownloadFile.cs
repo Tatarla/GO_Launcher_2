@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GOR_Launcher
 {
-    internal class CDownloadFile
+    public class CDownloadFile
     {
         string md5;
         string filePath;
@@ -27,5 +27,6 @@ namespace GOR_Launcher
         public string getFullUrl()      { return fileUrl; }
         public string getPath()         { return filePath; }
         public string getName()         { return fileName; }
+        public string getMD5()          { return md5; }
     }
 }
