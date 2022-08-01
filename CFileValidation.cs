@@ -7,6 +7,7 @@ using System.Xml;
 using System.Net;
 using System.ComponentModel;
 using XanderUI;
+using System.Windows.Forms;
 using System.IO;
 
 namespace GOR_Launcher
@@ -19,11 +20,13 @@ namespace GOR_Launcher
         static WebClient            dlClient;
 
         static XUIFlatProgressBar   dlBarRef;
+        static Label                dlLabelRef;
 
-        public static bool Initialize(XUIFlatProgressBar barRef)
+        public static bool Initialize(XUIFlatProgressBar barRef, Label labelRef)
         {
             downloadList    = new List<CDownloadFile>();
             dlBarRef        = barRef;
+            dlLabelRef      = labelRef;
 
             mainFileXml     = new XmlDocument();
             mainFileXml.Load(Constants.FILE_LIST_URL);
@@ -75,6 +78,11 @@ namespace GOR_Launcher
             double totalBytes   = double.Parse(e.TotalBytesToReceive.ToString());
             double percentage   = bytesIn / totalBytes * 100;
             dlBarRef.Value      = int.Parse(Math.Truncate(percentage).ToString());
+
+            double mbytesIn     = Math.Round((bytesIn / 1024) / 1024, 1);
+            double mbtotalBytes = Math.Round((totalBytes / 1024) / 1024, 1);
+            dlLabelRef.Text     = string.Format("{0} {1}... {2} Mb / {3} Mb", CLocalization.Get("downloading"), downloadList[dlPointer].getName(), mbytesIn.ToString(), mbtotalBytes.ToString());
+            
         }
 
         public static void DlFileCompleted(object sender, AsyncCompletedEventArgs e)

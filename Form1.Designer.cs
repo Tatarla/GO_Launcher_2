@@ -47,6 +47,7 @@
             this.serverStatusPanel = new System.Windows.Forms.Panel();
             this.serrverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
             this.serverStatusText = new System.Windows.Forms.Label();
+            this.mainProgressLabel = new System.Windows.Forms.Label();
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
@@ -215,14 +216,14 @@
             this.newsPanel.Controls.Add(this.newsBanner);
             this.newsPanel.Location = new System.Drawing.Point(12, 37);
             this.newsPanel.Name = "newsPanel";
-            this.newsPanel.Size = new System.Drawing.Size(300, 380);
+            this.newsPanel.Size = new System.Drawing.Size(300, 360);
             this.newsPanel.TabIndex = 3;
             // 
             // newsBanner
             // 
             this.newsBanner.Location = new System.Drawing.Point(0, 0);
             this.newsBanner.Name = "newsBanner";
-            this.newsBanner.Size = new System.Drawing.Size(300, 380);
+            this.newsBanner.Size = new System.Drawing.Size(300, 360);
             this.newsBanner.TabIndex = 10;
             this.newsBanner.TabStop = false;
             // 
@@ -297,6 +298,15 @@
             this.serverStatusText.Text = "Сервер активен и доступен для подключения";
             this.serverStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // mainProgressLabel
+            // 
+            this.mainProgressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mainProgressLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainProgressLabel.Location = new System.Drawing.Point(12, 413);
+            this.mainProgressLabel.Name = "mainProgressLabel";
+            this.mainProgressLabel.Size = new System.Drawing.Size(510, 20);
+            this.mainProgressLabel.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +315,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.mainProgressLabel);
             this.Controls.Add(this.serverStatusPanel);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.nicknameInput);
@@ -353,6 +364,7 @@
         private FontAwesome.Sharp.IconPictureBox serrverStatusIcon;
         private FontAwesome.Sharp.IconPictureBox onlineCounterIcon;
         private System.Windows.Forms.PictureBox newsBanner;
+        private System.Windows.Forms.Label mainProgressLabel;
     }
 }
 

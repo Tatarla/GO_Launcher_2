@@ -26,5 +26,6 @@ namespace GOR_Launcher
         public string getFullName()     { return filePath + fileName; }
         public string getFullUrl()      { return fileUrl; }
         public string getPath()         { return filePath; }
+        public string getName()         { return fileName; }
     }
 }

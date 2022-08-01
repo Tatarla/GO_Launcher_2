@@ -59,5 +59,14 @@ namespace GOR_Launcher {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загрузка.
+        /// </summary>
+        internal static string downloading {
+            get {
+                return ResourceManager.GetString("downloading", resourceCulture);
+            }
+        }
     }
 }
