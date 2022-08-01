@@ -40,20 +40,20 @@
             this.closeButton = new FontAwesome.Sharp.IconButton();
             this.mainProgressBar = new XanderUI.XUIFlatProgressBar();
             this.newsPanel = new System.Windows.Forms.Panel();
+            this.newsBanner = new System.Windows.Forms.PictureBox();
             this.playButton = new XanderUI.XUIButton();
             this.nicknameInput = new System.Windows.Forms.TextBox();
             this.nicknameLabel = new System.Windows.Forms.Label();
             this.serverStatusPanel = new System.Windows.Forms.Panel();
             this.serrverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
             this.serverStatusText = new System.Windows.Forms.Label();
-            this.newsBanner = new System.Windows.Forms.PictureBox();
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
             this.newsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).BeginInit();
             this.serverStatusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // addLinksPanel
@@ -218,6 +218,14 @@
             this.newsPanel.Size = new System.Drawing.Size(300, 380);
             this.newsPanel.TabIndex = 3;
             // 
+            // newsBanner
+            // 
+            this.newsBanner.Location = new System.Drawing.Point(0, 0);
+            this.newsBanner.Name = "newsBanner";
+            this.newsBanner.Size = new System.Drawing.Size(300, 380);
+            this.newsBanner.TabIndex = 10;
+            this.newsBanner.TabStop = false;
+            // 
             // playButton
             // 
             this.playButton.BackgroundColor = System.Drawing.Color.White;
@@ -289,14 +297,6 @@
             this.serverStatusText.Text = "Сервер активен и доступен для подключения";
             this.serverStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // newsBanner
-            // 
-            this.newsBanner.Location = new System.Drawing.Point(0, 0);
-            this.newsBanner.Name = "newsBanner";
-            this.newsBanner.Size = new System.Drawing.Size(300, 380);
-            this.newsBanner.TabIndex = 10;
-            this.newsBanner.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,9 +325,9 @@
             this.mainToolBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).EndInit();
             this.newsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).EndInit();
             this.serverStatusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
