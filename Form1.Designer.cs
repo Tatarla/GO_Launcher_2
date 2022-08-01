@@ -46,11 +46,14 @@
             this.serverStatusPanel = new System.Windows.Forms.Panel();
             this.serrverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
             this.serverStatusText = new System.Windows.Forms.Label();
+            this.newsBanner = new System.Windows.Forms.PictureBox();
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
+            this.newsPanel.SuspendLayout();
             this.serverStatusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // addLinksPanel
@@ -209,9 +212,10 @@
             // 
             // newsPanel
             // 
+            this.newsPanel.Controls.Add(this.newsBanner);
             this.newsPanel.Location = new System.Drawing.Point(12, 37);
             this.newsPanel.Name = "newsPanel";
-            this.newsPanel.Size = new System.Drawing.Size(317, 380);
+            this.newsPanel.Size = new System.Drawing.Size(300, 380);
             this.newsPanel.TabIndex = 3;
             // 
             // playButton
@@ -285,6 +289,14 @@
             this.serverStatusText.Text = "Сервер активен и доступен для подключения";
             this.serverStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // newsBanner
+            // 
+            this.newsBanner.Location = new System.Drawing.Point(0, 0);
+            this.newsBanner.Name = "newsBanner";
+            this.newsBanner.Size = new System.Drawing.Size(300, 380);
+            this.newsBanner.TabIndex = 10;
+            this.newsBanner.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,8 +324,10 @@
             this.mainToolBox.ResumeLayout(false);
             this.mainToolBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).EndInit();
+            this.newsPanel.ResumeLayout(false);
             this.serverStatusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +352,7 @@
         private System.Windows.Forms.Label serverStatusText;
         private FontAwesome.Sharp.IconPictureBox serrverStatusIcon;
         private FontAwesome.Sharp.IconPictureBox onlineCounterIcon;
+        private System.Windows.Forms.PictureBox newsBanner;
     }
 }
 

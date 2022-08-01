@@ -231,6 +231,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDownloadFile.cs" />
+    <Compile Include="CFileValidation.cs" />
     <Compile Include="CLocalization.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Form1.cs">

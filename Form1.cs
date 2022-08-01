@@ -22,6 +22,7 @@ namespace GOR_Launcher
         {
             // Initializing default language
             CLocalization.Initialize();
+            CFileValidation.Initialize();
 
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;

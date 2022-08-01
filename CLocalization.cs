@@ -10,8 +10,9 @@ namespace GOR_Launcher
 {
     public static class CLocalization
     {
-        static ResourceManager resMan;
-        static Dictionary<string, string> langMap;
+        static ResourceManager              resMan;
+        static Dictionary<string, string>   langMap;
+        static string                       currentLanguage;
 
         public static void Initialize()
         {
@@ -39,7 +40,8 @@ namespace GOR_Launcher
         {
             if (IsLanguageExist(langName))
             {
-                resMan = new ResourceManager("GOR_Launcher." + langName, Assembly.GetExecutingAssembly());
+                resMan          = new ResourceManager("GOR_Launcher." + langName, Assembly.GetExecutingAssembly());
+                currentLanguage = langName;
                 return true;
             }
 
@@ -50,6 +52,12 @@ namespace GOR_Launcher
         {
             return resMan.GetString(name);
         }
+
+        public static string GetLanguage()
+        {
+            return currentLanguage;
+        }
+
     }
 
 }
