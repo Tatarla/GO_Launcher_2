@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Net;
 using System.ComponentModel;
-using XanderUI;
 using System.Windows.Forms;
 using System.IO;
+using MaterialSkin.Controls;
 
 namespace GOR_Launcher
 {
     public static class CFileValidation
     {
-        static XmlDocument          mainFileXml;
-        static List<CDownloadFile>  downloadList;
-        static int                  dlPointer;
-        static WebClient            dlClient;
+        static XmlDocument              mainFileXml;
+        static List<CDownloadFile>      downloadList;
+        static int                      dlPointer;
+        static WebClient                dlClient;
 
-        static XUIFlatProgressBar   dlBarRef;
-        static Label                dlLabelRef;
+        static MaterialProgressBar      dlBarRef;
+        static Label                    dlLabelRef;
 
-        public static bool Initialize(XUIFlatProgressBar barRef, Label labelRef)
+        public static bool Initialize(MaterialProgressBar barRef, Label labelRef)
         {
             downloadList    = new List<CDownloadFile>();
             dlBarRef        = barRef;
@@ -82,7 +82,6 @@ namespace GOR_Launcher
             double mbytesIn     = Math.Round((bytesIn / 1024) / 1024, 1);
             double mbtotalBytes = Math.Round((totalBytes / 1024) / 1024, 1);
             dlLabelRef.Text     = string.Format("{0} {1}... {2} Mb / {3} Mb", CLocalization.Get("downloading"), downloadList[dlPointer].getName(), mbytesIn.ToString(), mbtotalBytes.ToString());
-            
         }
 
         public static void DlFileCompleted(object sender, AsyncCompletedEventArgs e)

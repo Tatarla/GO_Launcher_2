@@ -28,6 +28,7 @@ namespace GOR_Launcher
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
             serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
+            playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
         }
 
 
@@ -61,6 +62,25 @@ namespace GOR_Launcher
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void addFilesButton_Click(object sender, EventArgs e)
+        {
+            AddFilesForm newForm    = new AddFilesForm();
+            newForm.StartPosition   = FormStartPosition.CenterParent;
+            newForm.ShowDialog(this);
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm newForm = new SettingsForm();
+            newForm.StartPosition = FormStartPosition.CenterParent;
+            newForm.ShowDialog(this);
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

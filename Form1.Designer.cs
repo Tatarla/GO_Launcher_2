@@ -33,21 +33,21 @@
             this.websiteLink = new FontAwesome.Sharp.IconButton();
             this.discordButton = new FontAwesome.Sharp.IconButton();
             this.mainToolBox = new System.Windows.Forms.Panel();
+            this.addFilesButton = new FontAwesome.Sharp.IconButton();
             this.onlineCounter = new System.Windows.Forms.Label();
             this.onlineCounterIcon = new FontAwesome.Sharp.IconPictureBox();
             this.settingsButton = new FontAwesome.Sharp.IconButton();
             this.minimizeButton = new FontAwesome.Sharp.IconButton();
             this.closeButton = new FontAwesome.Sharp.IconButton();
-            this.mainProgressBar = new XanderUI.XUIFlatProgressBar();
             this.newsPanel = new System.Windows.Forms.Panel();
             this.newsBanner = new System.Windows.Forms.PictureBox();
-            this.playButton = new XanderUI.XUIButton();
-            this.nicknameInput = new System.Windows.Forms.TextBox();
-            this.nicknameLabel = new System.Windows.Forms.Label();
             this.serverStatusPanel = new System.Windows.Forms.Panel();
             this.serrverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
             this.serverStatusText = new System.Windows.Forms.Label();
             this.mainProgressLabel = new System.Windows.Forms.Label();
+            this.nicknameBox = new MetroFramework.Controls.MetroTextBox();
+            this.mainProgressBar = new MaterialSkin.Controls.MaterialProgressBar();
+            this.playButton = new MetroFramework.Controls.MetroButton();
             this.addLinksPanel.SuspendLayout();
             this.mainToolBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.onlineCounterIcon)).BeginInit();
@@ -106,6 +106,7 @@
             // mainToolBox
             // 
             this.mainToolBox.BackColor = System.Drawing.Color.Black;
+            this.mainToolBox.Controls.Add(this.addFilesButton);
             this.mainToolBox.Controls.Add(this.onlineCounter);
             this.mainToolBox.Controls.Add(this.onlineCounterIcon);
             this.mainToolBox.Controls.Add(this.settingsButton);
@@ -119,9 +120,29 @@
             this.mainToolBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainToolBox_MouseMove);
             this.mainToolBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mainToolBox_MouseUp);
             // 
+            // addFilesButton
+            // 
+            this.addFilesButton.BackColor = System.Drawing.Color.Transparent;
+            this.addFilesButton.FlatAppearance.BorderSize = 0;
+            this.addFilesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.addFilesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.addFilesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addFilesButton.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.addFilesButton.IconColor = System.Drawing.Color.White;
+            this.addFilesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addFilesButton.IconSize = 25;
+            this.addFilesButton.Location = new System.Drawing.Point(706, 0);
+            this.addFilesButton.Name = "addFilesButton";
+            this.addFilesButton.Size = new System.Drawing.Size(25, 25);
+            this.addFilesButton.TabIndex = 11;
+            this.addFilesButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.addFilesButton.UseVisualStyleBackColor = false;
+            this.addFilesButton.Click += new System.EventHandler(this.addFilesButton_Click);
+            // 
             // onlineCounter
             // 
             this.onlineCounter.AutoSize = true;
+            this.onlineCounter.ForeColor = System.Drawing.Color.White;
             this.onlineCounter.Location = new System.Drawing.Point(26, 5);
             this.onlineCounter.Name = "onlineCounter";
             this.onlineCounter.Size = new System.Drawing.Size(107, 13);
@@ -158,6 +179,7 @@
             this.settingsButton.TabIndex = 7;
             this.settingsButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.settingsButton.UseVisualStyleBackColor = false;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // minimizeButton
             // 
@@ -196,21 +218,6 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // mainProgressBar
-            // 
-            this.mainProgressBar.BarStyle = XanderUI.XUIFlatProgressBar.Style.Material;
-            this.mainProgressBar.BorderColor = System.Drawing.Color.Black;
-            this.mainProgressBar.CompleteColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(119)))), ((int)(((byte)(215)))));
-            this.mainProgressBar.InocmpletedColor = System.Drawing.Color.White;
-            this.mainProgressBar.Location = new System.Drawing.Point(12, 433);
-            this.mainProgressBar.MaxValue = 100;
-            this.mainProgressBar.Name = "mainProgressBar";
-            this.mainProgressBar.ShowBorder = true;
-            this.mainProgressBar.Size = new System.Drawing.Size(725, 5);
-            this.mainProgressBar.TabIndex = 2;
-            this.mainProgressBar.Text = "xuiFlatProgressBar1";
-            this.mainProgressBar.Value = 50;
-            // 
             // newsPanel
             // 
             this.newsPanel.Controls.Add(this.newsBanner);
@@ -226,44 +233,6 @@
             this.newsBanner.Size = new System.Drawing.Size(300, 360);
             this.newsBanner.TabIndex = 10;
             this.newsBanner.TabStop = false;
-            // 
-            // playButton
-            // 
-            this.playButton.BackgroundColor = System.Drawing.Color.White;
-            this.playButton.ButtonImage = null;
-            this.playButton.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.playButton.ButtonText = "Играть";
-            this.playButton.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(75)))), ((int)(((byte)(80)))));
-            this.playButton.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(140)))));
-            this.playButton.CornerRadius = 5;
-            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.playButton.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.playButton.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
-            this.playButton.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
-            this.playButton.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.playButton.Location = new System.Drawing.Point(537, 367);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(200, 50);
-            this.playButton.TabIndex = 4;
-            this.playButton.TextColor = System.Drawing.Color.Black;
-            this.playButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
-            // nicknameInput
-            // 
-            this.nicknameInput.Location = new System.Drawing.Point(596, 341);
-            this.nicknameInput.Name = "nicknameInput";
-            this.nicknameInput.Size = new System.Drawing.Size(141, 20);
-            this.nicknameInput.TabIndex = 6;
-            // 
-            // nicknameLabel
-            // 
-            this.nicknameLabel.AutoSize = true;
-            this.nicknameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nicknameLabel.Location = new System.Drawing.Point(534, 344);
-            this.nicknameLabel.Name = "nicknameLabel";
-            this.nicknameLabel.Size = new System.Drawing.Size(56, 13);
-            this.nicknameLabel.TabIndex = 7;
-            this.nicknameLabel.Text = "Никнейм:";
             // 
             // serverStatusPanel
             // 
@@ -291,6 +260,7 @@
             // serverStatusText
             // 
             this.serverStatusText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serverStatusText.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.serverStatusText.Location = new System.Drawing.Point(0, 0);
             this.serverStatusText.Name = "serverStatusText";
             this.serverStatusText.Size = new System.Drawing.Size(395, 35);
@@ -302,10 +272,74 @@
             // 
             this.mainProgressLabel.BackColor = System.Drawing.Color.Transparent;
             this.mainProgressLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainProgressLabel.ForeColor = System.Drawing.Color.White;
             this.mainProgressLabel.Location = new System.Drawing.Point(12, 413);
             this.mainProgressLabel.Name = "mainProgressLabel";
             this.mainProgressLabel.Size = new System.Drawing.Size(510, 20);
             this.mainProgressLabel.TabIndex = 10;
+            // 
+            // nicknameBox
+            // 
+            // 
+            // 
+            // 
+            this.nicknameBox.CustomButton.Image = null;
+            this.nicknameBox.CustomButton.Location = new System.Drawing.Point(176, 1);
+            this.nicknameBox.CustomButton.Name = "";
+            this.nicknameBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.nicknameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.nicknameBox.CustomButton.TabIndex = 1;
+            this.nicknameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.nicknameBox.CustomButton.UseSelectable = true;
+            this.nicknameBox.CustomButton.Visible = false;
+            this.nicknameBox.DisplayIcon = true;
+            this.nicknameBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.nicknameBox.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
+            this.nicknameBox.Lines = new string[0];
+            this.nicknameBox.Location = new System.Drawing.Point(537, 338);
+            this.nicknameBox.MaxLength = 24;
+            this.nicknameBox.Name = "nicknameBox";
+            this.nicknameBox.PasswordChar = '\0';
+            this.nicknameBox.PromptText = "Nickname";
+            this.nicknameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.nicknameBox.SelectedText = "";
+            this.nicknameBox.SelectionLength = 0;
+            this.nicknameBox.SelectionStart = 0;
+            this.nicknameBox.ShortcutsEnabled = true;
+            this.nicknameBox.Size = new System.Drawing.Size(200, 25);
+            this.nicknameBox.TabIndex = 11;
+            this.nicknameBox.UseSelectable = true;
+            this.nicknameBox.WaterMark = "Nickname";
+            this.nicknameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.nicknameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.nicknameBox.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // mainProgressBar
+            // 
+            this.mainProgressBar.Depth = 0;
+            this.mainProgressBar.Location = new System.Drawing.Point(12, 433);
+            this.mainProgressBar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mainProgressBar.Name = "mainProgressBar";
+            this.mainProgressBar.Size = new System.Drawing.Size(725, 5);
+            this.mainProgressBar.TabIndex = 13;
+            this.mainProgressBar.Value = 50;
+            // 
+            // playButton
+            // 
+            this.playButton.BackColor = System.Drawing.Color.Coral;
+            this.playButton.DisplayFocus = true;
+            this.playButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.playButton.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.playButton.Highlight = true;
+            this.playButton.Location = new System.Drawing.Point(537, 369);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(200, 48);
+            this.playButton.Style = MetroFramework.MetroColorStyle.White;
+            this.playButton.TabIndex = 14;
+            this.playButton.Text = "Play";
+            this.playButton.UseCustomBackColor = true;
+            this.playButton.UseSelectable = true;
+            this.playButton.UseStyleColors = true;
             // 
             // MainForm
             // 
@@ -315,16 +349,15 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.mainProgressBar);
+            this.Controls.Add(this.nicknameBox);
             this.Controls.Add(this.mainProgressLabel);
             this.Controls.Add(this.serverStatusPanel);
-            this.Controls.Add(this.nicknameLabel);
-            this.Controls.Add(this.nicknameInput);
-            this.Controls.Add(this.playButton);
             this.Controls.Add(this.newsPanel);
-            this.Controls.Add(this.mainProgressBar);
             this.Controls.Add(this.mainToolBox);
             this.Controls.Add(this.addLinksPanel);
-            this.ForeColor = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -340,7 +373,6 @@
             this.serverStatusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -348,7 +380,6 @@
 
         private System.Windows.Forms.Panel addLinksPanel;
         private System.Windows.Forms.Panel mainToolBox;
-        private XanderUI.XUIFlatProgressBar mainProgressBar;
         private FontAwesome.Sharp.IconButton discordButton;
         private FontAwesome.Sharp.IconButton websiteLink;
         private FontAwesome.Sharp.IconButton closeButton;
@@ -356,15 +387,16 @@
         private FontAwesome.Sharp.IconButton minimizeButton;
         private System.Windows.Forms.Panel newsPanel;
         private System.Windows.Forms.Label onlineCounter;
-        private XanderUI.XUIButton playButton;
-        private System.Windows.Forms.TextBox nicknameInput;
-        private System.Windows.Forms.Label nicknameLabel;
         private System.Windows.Forms.Panel serverStatusPanel;
         private System.Windows.Forms.Label serverStatusText;
         private FontAwesome.Sharp.IconPictureBox serrverStatusIcon;
         private FontAwesome.Sharp.IconPictureBox onlineCounterIcon;
         private System.Windows.Forms.PictureBox newsBanner;
         private System.Windows.Forms.Label mainProgressLabel;
+        private FontAwesome.Sharp.IconButton addFilesButton;
+        private MetroFramework.Controls.MetroTextBox nicknameBox;
+        private MaterialSkin.Controls.MaterialProgressBar mainProgressBar;
+        private MetroFramework.Controls.MetroButton playButton;
     }
 }
 
