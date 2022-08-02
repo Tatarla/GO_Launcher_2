@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Net;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.IO;
-using MaterialSkin.Controls;
 using System.Security.Cryptography;
 
 namespace GOR_Launcher
@@ -29,18 +25,15 @@ namespace GOR_Launcher
 
             mainForm        = form;
 
-            mainForm.SetPlayButton(false);
-
             if (!IsVersionPresent())
-                await ValidateFiles();
-
-            if (!IsReady())
-                StartDownlaod();
+                await StartFileValidation();
+            else
+                IsReady();
 
             await Task.Delay(1);
         }
 
-        private static bool IsReady()
+        public static bool IsReady()
         {
             if (downloadList.Count == 0)
             {
@@ -187,6 +180,16 @@ namespace GOR_Launcher
             return localVersion == remoteVersion;
         }
 
+        public static async Task StartFileValidation()
+        {
+            mainForm.SetPlayButton(false);
+
+            await ValidateFiles();
+
+            if (!IsReady())
+                StartDownlaod();
+        }
+
         private static async Task ValidateFiles()
         {
             // Cleanup
@@ -210,6 +213,9 @@ namespace GOR_Launcher
 
             for (int i = 0; i < remoteFileList.Count; i++)
             {
+                if (remoteFileList[i].getFullName().Contains(".launcher"))
+                    continue;
+
                 mainForm.SetProgressBar(Convert.ToInt16(percentage * i));
                 mainForm.SetProgressLabel(CLocalization.Get("fileValidating") + " " + remoteFileList[i].getName());
 

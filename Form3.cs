@@ -14,12 +14,17 @@ namespace GOR_Launcher
 {
     public partial class SettingsForm : MaterialForm
     {
-        MaterialSkinManager themeManager = MaterialSkinManager.Instance;
-
         public SettingsForm()
         {
             InitializeComponent();
-            themeManager.ColorScheme = Constants.MATERIAL_DEFAULT_COLOR;
+        }
+
+        private async void validateFilesButton_Click(object sender, EventArgs e)
+        {
+            if (CFileValidation.IsReady())
+                await CFileValidation.StartFileValidation();
+
+            await Task.Delay(1);
         }
     }
 }

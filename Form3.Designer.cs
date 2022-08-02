@@ -41,6 +41,7 @@
             this.soundVolumeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialSlider3 = new MaterialSkin.Controls.MaterialSlider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.validateFilesButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // languageSelectBox
@@ -87,7 +88,7 @@
             this.resolutionBoxX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.resolutionBoxX.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.resolutionBoxX.Depth = 0;
-            this.resolutionBoxX.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.resolutionBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.resolutionBoxX.HideSelection = true;
             this.resolutionBoxX.LeadingIcon = null;
             this.resolutionBoxX.Location = new System.Drawing.Point(169, 171);
@@ -257,11 +258,32 @@
             this.materialLabel1.TabIndex = 12;
             this.materialLabel1.Text = "Mouse sensitivity:";
             // 
+            // validateFilesButton
+            // 
+            this.validateFilesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.validateFilesButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.validateFilesButton.Depth = 0;
+            this.validateFilesButton.HighEmphasis = true;
+            this.validateFilesButton.Icon = null;
+            this.validateFilesButton.Location = new System.Drawing.Point(106, 427);
+            this.validateFilesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.validateFilesButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.validateFilesButton.Name = "validateFilesButton";
+            this.validateFilesButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.validateFilesButton.Size = new System.Drawing.Size(158, 36);
+            this.validateFilesButton.TabIndex = 13;
+            this.validateFilesButton.Text = "Run file validation";
+            this.validateFilesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.validateFilesButton.UseAccentColor = false;
+            this.validateFilesButton.UseVisualStyleBackColor = true;
+            this.validateFilesButton.Click += new System.EventHandler(this.validateFilesButton_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(371, 481);
+            this.ClientSize = new System.Drawing.Size(370, 480);
+            this.Controls.Add(this.validateFilesButton);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialSlider3);
             this.Controls.Add(this.soundVolumeLabel);
@@ -300,5 +322,6 @@
         private MaterialSkin.Controls.MaterialLabel soundVolumeLabel;
         private MaterialSkin.Controls.MaterialSlider materialSlider3;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialButton validateFilesButton;
     }
 }

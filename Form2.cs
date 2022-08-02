@@ -14,11 +14,9 @@ namespace GOR_Launcher
 {
     public partial class AddFilesForm : MaterialForm
     {
-        MaterialSkinManager themeManager = MaterialSkinManager.Instance;
         public AddFilesForm()
         {
             InitializeComponent();
-            themeManager.ColorScheme = Constants.MATERIAL_DEFAULT_COLOR;
         }
     }
 }

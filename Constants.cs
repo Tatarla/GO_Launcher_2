@@ -25,6 +25,6 @@ namespace GOR_Launcher
         public static Color SERVER_STATUS_OK_COLOR          = Color.FromArgb(50, 0, 255, 0);
         public static Color SERVER_STATUS_OFF_COLOR         = Color.FromArgb(50, 255, 255, 0);
         public static Color PLAY_BUTTON_COLOR               = Color.FromArgb(255, 40, 47, 99);
-        public static ColorScheme MATERIAL_DEFAULT_COLOR    = new ColorScheme(Primary.Red900, Primary.Red800, Primary.Red500, Accent.Red400, TextShade.WHITE);
+        public static ColorScheme MATERIAL_DEFAULT_COLOR    = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
     }
 }

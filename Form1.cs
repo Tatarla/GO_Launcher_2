@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
 
 namespace GOR_Launcher
 {
     public partial class MainForm : Form
     {
+        MaterialSkinManager themeManager = MaterialSkinManager.Instance;
+
         public MainForm()
         {
             InitializeComponent();
+            themeManager.ColorScheme = Constants.MATERIAL_DEFAULT_COLOR;
         }
 
 
