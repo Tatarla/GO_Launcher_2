@@ -200,8 +200,6 @@ namespace GOR_Launcher
             
             List<CDownloadFile> localFileList = new List<CDownloadFile>();
 
-            var test = Constants.CONFIG_FOLDER_PATH + "files.xml";
-
             if (File.Exists(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH + "files.xml")))
                 localFileList = ParseXmlFile(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH + "files.xml"));
 

@@ -126,4 +126,10 @@
   <data name="fileValidating" xml:space="preserve">
     <value>Проверка</value>
   </data>
+  <data name="nicknameInput" xml:space="preserve">
+    <value>Никнейм</value>
+  </data>
+  <data name="playButton" xml:space="preserve">
+    <value>Играть</value>
+  </data>
 </root>

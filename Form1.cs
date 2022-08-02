@@ -26,6 +26,8 @@ namespace GOR_Launcher
         {
             // Initializing default language
             CLocalization.Initialize();
+            CLocalization.UpdateMainForm(this);
+
             var _ = CFileValidation.Initialize(this);
 
             // Initializing panel colors with alpha channel
@@ -33,6 +35,11 @@ namespace GOR_Launcher
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
             serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
             playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
+        }
+
+        public void Translate()
+        {
+            
         }
 
         public void SetProgressLabel(string text)
@@ -93,6 +100,7 @@ namespace GOR_Launcher
         private void addFilesButton_Click(object sender, EventArgs e)
         {
             AddFilesForm newForm    = new AddFilesForm();
+            CLocalization.UpdateAddFilesForm(newForm);
             newForm.StartPosition   = FormStartPosition.CenterParent;
             newForm.ShowDialog(this);
         }
@@ -100,6 +108,7 @@ namespace GOR_Launcher
         private void settingsButton_Click(object sender, EventArgs e)
         {
             SettingsForm newForm = new SettingsForm();
+            CLocalization.UpdateSettingsForm(newForm);
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog(this);
         }

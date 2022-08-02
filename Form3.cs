@@ -17,6 +17,12 @@ namespace GOR_Launcher
         public SettingsForm()
         {
             InitializeComponent();
+
+            List<string> langList = CLocalization.GetLanguageList();
+            foreach(string str in langList)
+                languageSelectBox.Items.Add(str);
+
+            languageSelectBox.SelectedIndex = languageSelectBox.FindString(CLocalization.GetLanguageByCode(CLocalization.GetLanguage()));
         }
 
         private async void validateFilesButton_Click(object sender, EventArgs e)
@@ -25,6 +31,18 @@ namespace GOR_Launcher
                 await CFileValidation.StartFileValidation();
 
             await Task.Delay(1);
+        }
+
+        private void languageSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string languageCode = CLocalization.GetLanguageByName((string)languageSelectBox.Text);
+            if (languageCode != "none")
+                CLocalization.Translate(languageCode);
+        }
+
+        public void Translate()
+        {
+
         }
     }
 }

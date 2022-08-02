@@ -86,5 +86,23 @@ namespace GOR_Launcher {
                 return ResourceManager.GetString("fileValidating", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nickname.
+        /// </summary>
+        internal static string nicknameInput {
+            get {
+                return ResourceManager.GetString("nicknameInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        internal static string playButton {
+            get {
+                return ResourceManager.GetString("playButton", resourceCulture);
+            }
+        }
     }
 }

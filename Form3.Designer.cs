@@ -58,8 +58,6 @@
             this.languageSelectBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.languageSelectBox.IntegralHeight = false;
             this.languageSelectBox.ItemHeight = 29;
-            this.languageSelectBox.Items.AddRange(new object[] {
-            "English"});
             this.languageSelectBox.Location = new System.Drawing.Point(169, 89);
             this.languageSelectBox.MaxDropDownItems = 4;
             this.languageSelectBox.MouseState = MaterialSkin.MouseState.OUT;
@@ -69,6 +67,7 @@
             this.languageSelectBox.TabIndex = 0;
             this.languageSelectBox.UseAccent = false;
             this.languageSelectBox.UseTallSize = false;
+            this.languageSelectBox.SelectedIndexChanged += new System.EventHandler(this.languageSelectBox_SelectedIndexChanged);
             // 
             // languageSelectLabel
             // 
@@ -270,7 +269,7 @@
             this.validateFilesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.validateFilesButton.Name = "validateFilesButton";
             this.validateFilesButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.validateFilesButton.Size = new System.Drawing.Size(158, 36);
+            this.validateFilesButton.Size = new System.Drawing.Size(171, 36);
             this.validateFilesButton.TabIndex = 13;
             this.validateFilesButton.Text = "Run file validation";
             this.validateFilesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -281,7 +280,6 @@
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(370, 480);
             this.Controls.Add(this.validateFilesButton);
             this.Controls.Add(this.materialLabel1);
@@ -301,6 +299,7 @@
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,5 +18,10 @@ namespace GOR_Launcher
         {
             InitializeComponent();
         }
+
+        public void Translate()
+        {
+
+        }
     }
 }
