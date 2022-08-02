@@ -70,6 +70,15 @@ namespace GOR_Launcher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Игровые файлы актуальной версии!.
+        /// </summary>
+        internal static string fileDone {
+            get {
+                return ResourceManager.GetString("fileDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Проверка.
         /// </summary>
         internal static string fileValidating {

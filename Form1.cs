@@ -38,6 +38,8 @@ namespace GOR_Launcher
 
         public void SetProgressBar(int value)
         {
+            value = value > 100 ? 100 : value;
+            value = value < 0 ? 0 : value;
             mainProgressBar.Value = value;
         }
 

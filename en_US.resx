@@ -120,6 +120,9 @@
   <data name="downloading" xml:space="preserve">
     <value>Downloading</value>
   </data>
+  <data name="fileDone" xml:space="preserve">
+    <value>Game files is up to date!</value>
+  </data>
   <data name="fileValidating" xml:space="preserve">
     <value>Validating</value>
   </data>
