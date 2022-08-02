@@ -67,30 +67,24 @@ namespace GOR_Launcher
             XmlNodeList fileList = fileListNode.SelectNodes("file");
             foreach (XmlNode fileNode in fileList)
             {
-                string fileMd5 = fileNode.SelectSingleNode("md5").InnerText;
+                string fileMd5  = fileNode.SelectSingleNode("md5").InnerText;
                 string fileName = fileNode.SelectSingleNode("fileName").InnerText;
-                string fileUrl = fileNode.SelectSingleNode("fileUrl").InnerText;
+                string fileUrl  = fileNode.SelectSingleNode("fileUrl").InnerText;
                 string filePath = fileNode.SelectSingleNode("filePath").InnerText;
-                int fileType = 0;
-
-                // Checking if it is file or folder (fileType = 0 - file, = 1 - folder)
-                XmlNode fileTypeNode = fileNode.SelectSingleNode("fileType");
-                if (fileTypeNode != null)
-                    fileType = Convert.ToInt16(fileTypeNode.InnerText);
 
                 // Checking if is file located on the remote host
                 if (!fileUrl.Contains("http://") && !fileUrl.Contains("https://"))
                     fileUrl = Constants.FILE_DOWNLOAD_URL + fileUrl;
 
-                returnList.Add(new CDownloadFile(fileMd5, filePath, fileName, fileUrl, fileType));
+                returnList.Add(new CDownloadFile(fileMd5, filePath, fileName, fileUrl));
             }
 
             // Adding XML file and version XML every time (only for remote)
             Uri uriXml = new Uri(path);
             if (path.Contains("http://") || path.Contains("https://"))
             {
-                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Path.GetFileName(uriXml.LocalPath), path, 0));
-                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Constants.VERSION_FILE_NAME, Constants.VERSION_FILE_URL, 0));
+                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Path.GetFileName(uriXml.LocalPath), path));
+                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Constants.VERSION_FILE_NAME, Constants.VERSION_FILE_URL));
             }
 
             return returnList;
@@ -235,14 +229,14 @@ namespace GOR_Launcher
             }
 
             // Forming deletion list
-            /*if (localFileList != null)
+            if (localFileList != null)
             {
                 for (int i = 0; i < localFileList.Count; i++)
                 {
                     if (!ContainsFile(remoteFileList, localFileList[i].getName()))
                         deleteFiles.Add(localFileList[i]);
                 }
-            }*/
+            }
 
             await Task.Delay(1);
         }

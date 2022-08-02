@@ -12,15 +12,13 @@ namespace GOR_Launcher
         string filePath;
         string fileName;
         string fileUrl;
-        int    fileType;
 
-        public CDownloadFile(string md5, string filePath, string fileName, string fileUrl, int fileType)
+        public CDownloadFile(string md5, string filePath, string fileName, string fileUrl)
         {
             this.md5 = md5;
             this.filePath = filePath;
             this.fileName = fileName;
             this.fileUrl = fileUrl;
-            this.fileType = fileType;
         }
 
         public string getFullName()     { return filePath + fileName; }
