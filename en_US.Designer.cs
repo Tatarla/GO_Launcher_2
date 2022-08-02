@@ -68,5 +68,14 @@ namespace GOR_Launcher {
                 return ResourceManager.GetString("downloading", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validating.
+        /// </summary>
+        internal static string fileValidating {
+            get {
+                return ResourceManager.GetString("fileValidating", resourceCulture);
+            }
+        }
     }
 }

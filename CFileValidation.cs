@@ -24,7 +24,7 @@ namespace GOR_Launcher
         static MaterialProgressBar      dlBarRef;
         static Label                    dlLabelRef;
 
-        public static bool Initialize(MaterialProgressBar barRef, Label labelRef)
+        public static async Task Initialize(MaterialProgressBar barRef, Label labelRef)
         {
             downloadList    = new List<CDownloadFile>();
             deleteFiles     = new List<CDownloadFile>();
@@ -32,9 +32,9 @@ namespace GOR_Launcher
             dlLabelRef      = labelRef;
 
             if (!IsVersionPresent())
-                ValidateFiles();
+                await ValidateFiles();
 
-            return true;
+            await Task.Delay(3000);
         }
 
         public static List<CDownloadFile> ParseXmlFile(string path)
@@ -136,9 +136,8 @@ namespace GOR_Launcher
             {
                 using (var stream = File.OpenRead(filename))
                 {
-                    byte[] md5_hash = md5.ComputeHash(stream);
-                    string md5_string = BitConverter.ToString(md5_hash).Replace("-", "").ToLowerInvariant();
-                    return md5.ComputeHash(stream).ToString();
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
             }
         }
@@ -169,7 +168,7 @@ namespace GOR_Launcher
             return localVersion == remoteVersion;
         }
 
-        public static void ValidateFiles()
+        private static async Task ValidateFiles()
         {
             // Cleanup
             deleteFiles.Clear();
@@ -185,8 +184,13 @@ namespace GOR_Launcher
             List<CDownloadFile> remoteFileList = ParseXmlFile(Constants.FILE_LIST_URL);
 
             // Validating remote files
+            double percentage = Math.Round(remoteFileList.Count / 100.0, 1);
+
             for (int i = 0; i < remoteFileList.Count; i++)
             {
+                dlBarRef.Value = Convert.ToInt16(percentage * i);
+                dlLabelRef.Text = CLocalization.Get("fileValidating") + " " + remoteFileList[i].getName();
+
                 if (!File.Exists(remoteFileList[i].getFullName()))
                 {
                     downloadList.Add(remoteFileList[i]);
@@ -196,7 +200,8 @@ namespace GOR_Launcher
                 FileAttributes atr = File.GetAttributes(remoteFileList[i].getFullName());
                 if (!atr.HasFlag(FileAttributes.Directory))
                 {
-                    if (GetFileMD5(remoteFileList[i].getFullName()) != remoteFileList[i].getMD5().ToLower())
+                    var fileMd5 = GetFileMD5(remoteFileList[i].getFullName());
+                    if (fileMd5 != remoteFileList[i].getMD5().ToLower())
                         downloadList.Add(remoteFileList[i]);
                 }
             }
@@ -211,7 +216,7 @@ namespace GOR_Launcher
                 }
             }
 
-            int test = downloadList.Count;
+            await Task.Delay(3000);
         }
     }
 }

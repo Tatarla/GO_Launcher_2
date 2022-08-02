@@ -120,4 +120,7 @@
   <data name="downloading" xml:space="preserve">
     <value>Downloading</value>
   </data>
+  <data name="fileValidating" xml:space="preserve">
+    <value>Validating</value>
+  </data>
 </root>

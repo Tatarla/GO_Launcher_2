@@ -22,9 +22,7 @@ namespace GOR_Launcher
         {
             // Initializing default language
             CLocalization.Initialize();
-            CFileValidation.Initialize(mainProgressBar, mainProgressLabel);
-
-            CFileValidation.GetFileMD5("GOR_Launcher.exe");
+            var _ = CFileValidation.Initialize(mainProgressBar, mainProgressLabel);
 
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
