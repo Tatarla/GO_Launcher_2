@@ -21,18 +21,22 @@ namespace GOR_Launcher
         static int                      dlPointer;
         static WebClient                dlClient;
 
-        static MaterialProgressBar      dlBarRef;
-        static Label                    dlLabelRef;
+        static MainForm                 mainForm;
 
-        public static async Task Initialize(MaterialProgressBar barRef, Label labelRef)
+        public static async Task Initialize(MainForm form)
         {
             downloadList    = new List<CDownloadFile>();
             deleteFiles     = new List<CDownloadFile>();
-            dlBarRef        = barRef;
-            dlLabelRef      = labelRef;
+
+            mainForm        = form;
+
+            mainForm.SetPlayButton(false);
 
             if (!IsVersionPresent())
                 await ValidateFiles();
+
+            if (downloadList.Count == 0)
+                mainForm.SetPlayButton(true);
 
             await Task.Delay(3000);
         }
@@ -88,11 +92,11 @@ namespace GOR_Launcher
             double bytesIn      = double.Parse(e.BytesReceived.ToString());
             double totalBytes   = double.Parse(e.TotalBytesToReceive.ToString());
             double percentage   = bytesIn / totalBytes * 100;
-            dlBarRef.Value      = int.Parse(Math.Truncate(percentage).ToString());
+            mainForm.SetProgressBar(int.Parse(Math.Truncate(percentage).ToString()));
 
             double mbytesIn     = Math.Round((bytesIn / 1024) / 1024, 1);
             double mbtotalBytes = Math.Round((totalBytes / 1024) / 1024, 1);
-            dlLabelRef.Text     = string.Format("{0} {1}... {2} Mb / {3} Mb", CLocalization.Get("downloading"), downloadList[dlPointer].getName(), mbytesIn.ToString(), mbtotalBytes.ToString());
+            mainForm.SetProgressLabel(string.Format("{0} {1}... {2} Mb / {3} Mb", CLocalization.Get("downloading"), downloadList[dlPointer].getName(), mbytesIn.ToString(), mbtotalBytes.ToString()));
         }
 
         public static void DlFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -188,8 +192,8 @@ namespace GOR_Launcher
 
             for (int i = 0; i < remoteFileList.Count; i++)
             {
-                dlBarRef.Value = Convert.ToInt16(percentage * i);
-                dlLabelRef.Text = CLocalization.Get("fileValidating") + " " + remoteFileList[i].getName();
+                mainForm.SetProgressBar(Convert.ToInt16(percentage * i));
+                mainForm.SetProgressLabel(CLocalization.Get("fileValidating") + " " + remoteFileList[i].getName());
 
                 if (!File.Exists(remoteFileList[i].getFullName()))
                 {

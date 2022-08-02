@@ -22,13 +22,33 @@ namespace GOR_Launcher
         {
             // Initializing default language
             CLocalization.Initialize();
-            var _ = CFileValidation.Initialize(mainProgressBar, mainProgressLabel);
+            var _ = CFileValidation.Initialize(this);
 
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
             serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
             playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
+        }
+
+        public void SetProgressLabel(string text)
+        {
+            mainProgressLabel.Text = text;
+        }
+
+        public void SetProgressBar(int value)
+        {
+            mainProgressBar.Value = value;
+        }
+
+        public int GetProgressBar()
+        {
+            return mainProgressBar.Value;
+        }
+
+        public void SetPlayButton(bool value)
+        {
+            playButton.Enabled = value;
         }
 
 
