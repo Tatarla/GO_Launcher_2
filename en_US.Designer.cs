@@ -61,6 +61,15 @@ namespace GOR_Launcher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional content.
+        /// </summary>
+        internal static string additionalfiles_header {
+            get {
+                return ResourceManager.GetString("additionalfiles_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Downloading.
         /// </summary>
         internal static string downloading {
@@ -102,6 +111,78 @@ namespace GOR_Launcher {
         internal static string playButton {
             get {
                 return ResourceManager.GetString("playButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string settings_header {
+            get {
+                return ResourceManager.GetString("settings_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string settings_language {
+            get {
+                return ResourceManager.GetString("settings_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Music Volume:.
+        /// </summary>
+        internal static string settings_musvolume {
+            get {
+                return ResourceManager.GetString("settings_musvolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resolution:.
+        /// </summary>
+        internal static string settings_resolution {
+            get {
+                return ResourceManager.GetString("settings_resolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouse Sensitivity:.
+        /// </summary>
+        internal static string settings_sensitivity {
+            get {
+                return ResourceManager.GetString("settings_sensitivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sound Volume:.
+        /// </summary>
+        internal static string settings_sndvolume {
+            get {
+                return ResourceManager.GetString("settings_sndvolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RUN FILE VALIDATION.
+        /// </summary>
+        internal static string settings_validation {
+            get {
+                return ResourceManager.GetString("settings_validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windowed Mode:.
+        /// </summary>
+        internal static string settings_windowed {
+            get {
+                return ResourceManager.GetString("settings_windowed", resourceCulture);
             }
         }
     }

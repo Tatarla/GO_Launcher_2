@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="additionalfiles_header" xml:space="preserve">
+    <value>Дополнительный контент</value>
+  </data>
   <data name="downloading" xml:space="preserve">
     <value>Загрузка</value>
   </data>
@@ -131,5 +134,29 @@
   </data>
   <data name="playButton" xml:space="preserve">
     <value>Играть</value>
+  </data>
+  <data name="settings_header" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="settings_musvolume" xml:space="preserve">
+    <value>Громкость музыки:</value>
+  </data>
+  <data name="settings_resolution" xml:space="preserve">
+    <value>Разрешение экрана:</value>
+  </data>
+  <data name="settings_sensitivity" xml:space="preserve">
+    <value>Чувствительность мыши:</value>
+  </data>
+  <data name="settings_sndvolume" xml:space="preserve">
+    <value>Громкость звуков:</value>
+  </data>
+  <data name="settings_validation" xml:space="preserve">
+    <value>ЗАПУСТИТЬ ПРОВЕРКУ ФАЙЛОВ</value>
+  </data>
+  <data name="settings_windowed" xml:space="preserve">
+    <value>Оконный режим:</value>
   </data>
 </root>

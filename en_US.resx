@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="additionalfiles_header" xml:space="preserve">
+    <value>Additional content</value>
+  </data>
   <data name="downloading" xml:space="preserve">
     <value>Downloading</value>
   </data>
@@ -131,5 +134,29 @@
   </data>
   <data name="playButton" xml:space="preserve">
     <value>Play</value>
+  </data>
+  <data name="settings_header" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="settings_musvolume" xml:space="preserve">
+    <value>Music Volume:</value>
+  </data>
+  <data name="settings_resolution" xml:space="preserve">
+    <value>Resolution:</value>
+  </data>
+  <data name="settings_sensitivity" xml:space="preserve">
+    <value>Mouse Sensitivity:</value>
+  </data>
+  <data name="settings_sndvolume" xml:space="preserve">
+    <value>Sound Volume:</value>
+  </data>
+  <data name="settings_validation" xml:space="preserve">
+    <value>RUN FILE VALIDATION</value>
+  </data>
+  <data name="settings_windowed" xml:space="preserve">
+    <value>Windowed Mode:</value>
   </data>
 </root>

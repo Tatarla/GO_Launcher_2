@@ -17,11 +17,12 @@ namespace GOR_Launcher
         public AddFilesForm()
         {
             InitializeComponent();
+            Translate();
         }
 
         public void Translate()
         {
-
+            this.Text = CLocalization.Get("additionalfiles_header");
         }
     }
 }

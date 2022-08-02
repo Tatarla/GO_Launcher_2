@@ -35,11 +35,20 @@ namespace GOR_Launcher
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
             serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
             playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
+
+            Translate();
         }
 
         public void Translate()
         {
-            
+            playButton.Text         = CLocalization.Get("playButton");
+
+            //For some fckn reason WaterMark by itself doesn't show up hint, neither PromptText, but together they do :?
+            nicknameBox.WaterMark   = CLocalization.Get("nicknameInput");
+            nicknameBox.PromptText  = CLocalization.Get("nicknameInput");
+
+
+
         }
 
         public void SetProgressLabel(string text)

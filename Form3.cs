@@ -23,6 +23,7 @@ namespace GOR_Launcher
                 languageSelectBox.Items.Add(str);
 
             languageSelectBox.SelectedIndex = languageSelectBox.FindString(CLocalization.GetLanguageByCode(CLocalization.GetLanguage()));
+            Translate();
         }
 
         private async void validateFilesButton_Click(object sender, EventArgs e)
@@ -42,7 +43,14 @@ namespace GOR_Launcher
 
         public void Translate()
         {
-
+            this.Text                   = CLocalization.Get("settings_header");
+            languageSelectLabel.Text    = CLocalization.Get("settings_language");
+            resolutionLabel.Text        = CLocalization.Get("settings_resolution");
+            windowedModeLabel.Text      = CLocalization.Get("settings_windowed");
+            musicVolumeLabel.Text       = CLocalization.Get("settings_musvolume");
+            soundVolumeLabel.Text       = CLocalization.Get("settings_sndvolume");
+            mouseSensitivityLabel.Text  = CLocalization.Get("settings_sensitivity");
+            validateFilesButton.Text    = CLocalization.Get("settings_validation");
         }
     }
 }

@@ -40,7 +40,7 @@
             this.materialSlider2 = new MaterialSkin.Controls.MaterialSlider();
             this.soundVolumeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialSlider3 = new MaterialSkin.Controls.MaterialSlider();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.mouseSensitivityLabel = new MaterialSkin.Controls.MaterialLabel();
             this.validateFilesButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.languageSelectBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.languageSelectBox.IntegralHeight = false;
             this.languageSelectBox.ItemHeight = 29;
-            this.languageSelectBox.Location = new System.Drawing.Point(169, 89);
+            this.languageSelectBox.Location = new System.Drawing.Point(180, 89);
             this.languageSelectBox.MaxDropDownItems = 4;
             this.languageSelectBox.MouseState = MaterialSkin.MouseState.OUT;
             this.languageSelectBox.Name = "languageSelectBox";
@@ -90,7 +90,7 @@
             this.resolutionBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.resolutionBoxX.HideSelection = true;
             this.resolutionBoxX.LeadingIcon = null;
-            this.resolutionBoxX.Location = new System.Drawing.Point(169, 171);
+            this.resolutionBoxX.Location = new System.Drawing.Point(180, 171);
             this.resolutionBoxX.MaxLength = 32767;
             this.resolutionBoxX.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxX.Name = "resolutionBoxX";
@@ -132,7 +132,7 @@
             this.resolutionBoxY.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.resolutionBoxY.HideSelection = true;
             this.resolutionBoxY.LeadingIcon = null;
-            this.resolutionBoxY.Location = new System.Drawing.Point(269, 171);
+            this.resolutionBoxY.Location = new System.Drawing.Point(280, 171);
             this.resolutionBoxY.MaxLength = 32767;
             this.resolutionBoxY.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxY.Name = "resolutionBoxY";
@@ -157,7 +157,7 @@
             // 
             this.windowedModeSwitch.AutoSize = true;
             this.windowedModeSwitch.Depth = 0;
-            this.windowedModeSwitch.Location = new System.Drawing.Point(301, 233);
+            this.windowedModeSwitch.Location = new System.Drawing.Point(312, 233);
             this.windowedModeSwitch.Margin = new System.Windows.Forms.Padding(0);
             this.windowedModeSwitch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.windowedModeSwitch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -183,7 +183,7 @@
             // 
             this.materialSlider1.Depth = 0;
             this.materialSlider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider1.Location = new System.Drawing.Point(234, 286);
+            this.materialSlider1.Location = new System.Drawing.Point(245, 286);
             this.materialSlider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSlider1.Name = "materialSlider1";
             this.materialSlider1.ShowText = false;
@@ -209,7 +209,7 @@
             // 
             this.materialSlider2.Depth = 0;
             this.materialSlider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider2.Location = new System.Drawing.Point(234, 332);
+            this.materialSlider2.Location = new System.Drawing.Point(245, 332);
             this.materialSlider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSlider2.Name = "materialSlider2";
             this.materialSlider2.ShowText = false;
@@ -235,7 +235,7 @@
             // 
             this.materialSlider3.Depth = 0;
             this.materialSlider3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider3.Location = new System.Drawing.Point(234, 378);
+            this.materialSlider3.Location = new System.Drawing.Point(245, 378);
             this.materialSlider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSlider3.Name = "materialSlider3";
             this.materialSlider3.ShowText = false;
@@ -245,31 +245,32 @@
             this.materialSlider3.Text = "materialSlider3";
             this.materialSlider3.Value = 100;
             // 
-            // materialLabel1
+            // mouseSensitivityLabel
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(16, 387);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(128, 19);
-            this.materialLabel1.TabIndex = 12;
-            this.materialLabel1.Text = "Mouse sensitivity:";
+            this.mouseSensitivityLabel.AutoSize = true;
+            this.mouseSensitivityLabel.Depth = 0;
+            this.mouseSensitivityLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mouseSensitivityLabel.Location = new System.Drawing.Point(16, 387);
+            this.mouseSensitivityLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mouseSensitivityLabel.Name = "mouseSensitivityLabel";
+            this.mouseSensitivityLabel.Size = new System.Drawing.Size(128, 19);
+            this.mouseSensitivityLabel.TabIndex = 12;
+            this.mouseSensitivityLabel.Text = "Mouse sensitivity:";
             // 
             // validateFilesButton
             // 
             this.validateFilesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.validateFilesButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.validateFilesButton.Depth = 0;
+            this.validateFilesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.validateFilesButton.HighEmphasis = true;
             this.validateFilesButton.Icon = null;
-            this.validateFilesButton.Location = new System.Drawing.Point(106, 427);
+            this.validateFilesButton.Location = new System.Drawing.Point(3, 441);
             this.validateFilesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.validateFilesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.validateFilesButton.Name = "validateFilesButton";
             this.validateFilesButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.validateFilesButton.Size = new System.Drawing.Size(171, 36);
+            this.validateFilesButton.Size = new System.Drawing.Size(374, 36);
             this.validateFilesButton.TabIndex = 13;
             this.validateFilesButton.Text = "Run file validation";
             this.validateFilesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -280,9 +281,9 @@
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(370, 480);
+            this.ClientSize = new System.Drawing.Size(380, 480);
             this.Controls.Add(this.validateFilesButton);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.mouseSensitivityLabel);
             this.Controls.Add(this.materialSlider3);
             this.Controls.Add(this.soundVolumeLabel);
             this.Controls.Add(this.materialSlider2);
@@ -320,7 +321,7 @@
         private MaterialSkin.Controls.MaterialSlider materialSlider2;
         private MaterialSkin.Controls.MaterialLabel soundVolumeLabel;
         private MaterialSkin.Controls.MaterialSlider materialSlider3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel mouseSensitivityLabel;
         private MaterialSkin.Controls.MaterialButton validateFilesButton;
     }
 }
