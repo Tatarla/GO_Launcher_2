@@ -182,8 +182,8 @@ namespace GOR_Launcher
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            G2O_Run(CConfig.GetVersion().Major, CConfig.GetVersion().Minor, CConfig.GetVersion().Build);
             CConfig.UpdateRegistry();
+            G2O_Run(CConfig.GetVersion().Major, CConfig.GetVersion().Minor, CConfig.GetVersion().Build);
         }
     }
 }
