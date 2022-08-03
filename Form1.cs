@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using MaterialSkin;
 
 namespace GOR_Launcher
 {
     public partial class MainForm : Form
     {
+        [DllImport("G2O_Proxy.dll")]
+        public extern static int G2O_Run(int major, int minor, int build);
+
         MaterialSkinManager themeManager = MaterialSkinManager.Instance;
 
         public MainForm()
@@ -169,6 +173,7 @@ namespace GOR_Launcher
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            G2O_Run(CConfig.GetVersion().Major, CConfig.GetVersion().Minor, CConfig.GetVersion().Build);
             CConfig.UpdateRegistry();
         }
     }

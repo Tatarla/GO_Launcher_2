@@ -16,6 +16,7 @@ namespace GOR_Launcher
         private static int      onlinePlayers;
         private static string   world;
         private static string   playerNickname;
+        private static Version  ver;
 
         public static void Initialize()
         {
@@ -27,6 +28,9 @@ namespace GOR_Launcher
             serverAddress       = rootNode.SelectSingleNode("address").InnerText;
             connectionAvailable = Convert.ToInt16(rootNode.SelectSingleNode("available").InnerText);
             world               = rootNode.SelectSingleNode("world").InnerText;
+            string version      = rootNode.SelectSingleNode("version").InnerText;
+
+            ver                 = new Version(version);
 
             // Parsing player counter
             using (var wc = new WebClient())
@@ -58,9 +62,10 @@ namespace GOR_Launcher
             key.SetValue("world",       world);
         }
 
-        public static void UpdateNickname(string nickname)  { playerNickname = nickname; }
-        public static string    GetServerAddress()          { return serverAddress; }
-        public static bool      IsConnectionAvailable()     { return connectionAvailable == 1; }
-        public static int       GetOnlinePlayers()          { return connectionAvailable == 1 ? onlinePlayers : 0; }
+        public static Version   GetVersion()                        { return ver; }
+        public static void      UpdateNickname(string nickname)     { playerNickname = nickname; }
+        public static string    GetServerAddress()                  { return serverAddress; }
+        public static bool      IsConnectionAvailable()             { return connectionAvailable == 1; }
+        public static int       GetOnlinePlayers()                  { return connectionAvailable == 1 ? onlinePlayers : 0; }
     }
 }
