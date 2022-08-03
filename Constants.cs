@@ -26,6 +26,7 @@ namespace GOR_Launcher
 
         public static string CONFIG_FOLDER_PATH             = ".launcher/";
         public static string VERSION_FILE_NAME              = "version.xml";
+        public static string GAME_CONFIG_PATH               = "System/Gothic.ini";
 
         public static Color LINKS_PANEL_COLOR               = Color.FromArgb(100, 40, 47, 99);
         public static Color NEWS_PANEL_COLOR                = Color.FromArgb(100, 0, 0, 0);

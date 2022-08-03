@@ -265,6 +265,7 @@
     <Compile Include="CConfig.cs" />
     <Compile Include="CDownloadFile.cs" />
     <Compile Include="CFileValidation.cs" />
+    <Compile Include="CGameConfig.cs" />
     <Compile Include="CLocalization.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="CSettings.cs" />

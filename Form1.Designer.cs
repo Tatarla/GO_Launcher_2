@@ -74,7 +74,7 @@
             this.websiteLink.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.websiteLink.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.websiteLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.websiteLink.IconChar = FontAwesome.Sharp.IconChar.Link;
+            this.websiteLink.IconChar = FontAwesome.Sharp.IconChar.HouseChimney;
             this.websiteLink.IconColor = System.Drawing.Color.White;
             this.websiteLink.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.websiteLink.IconSize = 50;
@@ -312,7 +312,6 @@
             this.nicknameBox.WaterMark = "Nickname";
             this.nicknameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.nicknameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.nicknameBox.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // mainProgressBar
             // 

@@ -28,6 +28,7 @@ namespace GOR_Launcher
 
             // Initializing default language
             CConfig.Initialize();
+            CGameConfig.Initialize();
             CLocalization.Initialize();
             CLocalization.UpdateMainForm(this);
 
@@ -52,7 +53,6 @@ namespace GOR_Launcher
             onlineCounter.Text = string.Format("{0} {1}", CLocalization.Get("onlinePlayers"), CConfig.GetOnlinePlayers());
 
             UpdateServerStatus();
-
         }
 
         public void SetProgressLabel(string text)
@@ -150,11 +150,6 @@ namespace GOR_Launcher
             CLocalization.UpdateSettingsForm(newForm);
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog(this);
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void discordButton_Click(object sender, EventArgs e)

@@ -35,11 +35,11 @@
             this.resolutionBoxY = new MaterialSkin.Controls.MaterialTextBox2();
             this.windowedModeSwitch = new MaterialSkin.Controls.MaterialSwitch();
             this.windowedModeLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSlider1 = new MaterialSkin.Controls.MaterialSlider();
+            this.musicSlider = new MaterialSkin.Controls.MaterialSlider();
             this.musicVolumeLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSlider2 = new MaterialSkin.Controls.MaterialSlider();
+            this.soundSlider = new MaterialSkin.Controls.MaterialSlider();
             this.soundVolumeLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSlider3 = new MaterialSkin.Controls.MaterialSlider();
+            this.mouseSlider = new MaterialSkin.Controls.MaterialSlider();
             this.mouseSensitivityLabel = new MaterialSkin.Controls.MaterialLabel();
             this.validateFilesButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.resolutionBoxX.HideSelection = true;
             this.resolutionBoxX.LeadingIcon = null;
             this.resolutionBoxX.Location = new System.Drawing.Point(180, 171);
-            this.resolutionBoxX.MaxLength = 32767;
+            this.resolutionBoxX.MaxLength = 5;
             this.resolutionBoxX.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxX.Name = "resolutionBoxX";
             this.resolutionBoxX.PasswordChar = '\0';
@@ -110,6 +110,7 @@
             this.resolutionBoxX.UseAccent = false;
             this.resolutionBoxX.UseSystemPasswordChar = false;
             this.resolutionBoxX.UseTallSize = false;
+            this.resolutionBoxX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.resolutionBoxX_KeyPress);
             // 
             // resolutionLabel
             // 
@@ -133,7 +134,7 @@
             this.resolutionBoxY.HideSelection = true;
             this.resolutionBoxY.LeadingIcon = null;
             this.resolutionBoxY.Location = new System.Drawing.Point(280, 171);
-            this.resolutionBoxY.MaxLength = 32767;
+            this.resolutionBoxY.MaxLength = 5;
             this.resolutionBoxY.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxY.Name = "resolutionBoxY";
             this.resolutionBoxY.PasswordChar = '\0';
@@ -152,6 +153,7 @@
             this.resolutionBoxY.UseAccent = false;
             this.resolutionBoxY.UseSystemPasswordChar = false;
             this.resolutionBoxY.UseTallSize = false;
+            this.resolutionBoxY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.resolutionBoxY_KeyPress);
             // 
             // windowedModeSwitch
             // 
@@ -179,19 +181,19 @@
             this.windowedModeLabel.TabIndex = 6;
             this.windowedModeLabel.Text = "Windowed:";
             // 
-            // materialSlider1
+            // musicSlider
             // 
-            this.materialSlider1.Depth = 0;
-            this.materialSlider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider1.Location = new System.Drawing.Point(245, 286);
-            this.materialSlider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSlider1.Name = "materialSlider1";
-            this.materialSlider1.ShowText = false;
-            this.materialSlider1.ShowValue = false;
-            this.materialSlider1.Size = new System.Drawing.Size(125, 40);
-            this.materialSlider1.TabIndex = 7;
-            this.materialSlider1.Text = "materialSlider1";
-            this.materialSlider1.Value = 100;
+            this.musicSlider.Depth = 0;
+            this.musicSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.musicSlider.Location = new System.Drawing.Point(245, 286);
+            this.musicSlider.MouseState = MaterialSkin.MouseState.HOVER;
+            this.musicSlider.Name = "musicSlider";
+            this.musicSlider.ShowText = false;
+            this.musicSlider.ShowValue = false;
+            this.musicSlider.Size = new System.Drawing.Size(125, 40);
+            this.musicSlider.TabIndex = 7;
+            this.musicSlider.Text = "";
+            this.musicSlider.Value = 100;
             // 
             // musicVolumeLabel
             // 
@@ -205,19 +207,19 @@
             this.musicVolumeLabel.TabIndex = 8;
             this.musicVolumeLabel.Text = "Music volume:";
             // 
-            // materialSlider2
+            // soundSlider
             // 
-            this.materialSlider2.Depth = 0;
-            this.materialSlider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider2.Location = new System.Drawing.Point(245, 332);
-            this.materialSlider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSlider2.Name = "materialSlider2";
-            this.materialSlider2.ShowText = false;
-            this.materialSlider2.ShowValue = false;
-            this.materialSlider2.Size = new System.Drawing.Size(125, 40);
-            this.materialSlider2.TabIndex = 9;
-            this.materialSlider2.Text = "materialSlider2";
-            this.materialSlider2.Value = 100;
+            this.soundSlider.Depth = 0;
+            this.soundSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.soundSlider.Location = new System.Drawing.Point(245, 332);
+            this.soundSlider.MouseState = MaterialSkin.MouseState.HOVER;
+            this.soundSlider.Name = "soundSlider";
+            this.soundSlider.ShowText = false;
+            this.soundSlider.ShowValue = false;
+            this.soundSlider.Size = new System.Drawing.Size(125, 40);
+            this.soundSlider.TabIndex = 9;
+            this.soundSlider.Text = "";
+            this.soundSlider.Value = 100;
             // 
             // soundVolumeLabel
             // 
@@ -231,19 +233,19 @@
             this.soundVolumeLabel.TabIndex = 10;
             this.soundVolumeLabel.Text = "Sound volume:";
             // 
-            // materialSlider3
+            // mouseSlider
             // 
-            this.materialSlider3.Depth = 0;
-            this.materialSlider3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialSlider3.Location = new System.Drawing.Point(245, 378);
-            this.materialSlider3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSlider3.Name = "materialSlider3";
-            this.materialSlider3.ShowText = false;
-            this.materialSlider3.ShowValue = false;
-            this.materialSlider3.Size = new System.Drawing.Size(125, 40);
-            this.materialSlider3.TabIndex = 11;
-            this.materialSlider3.Text = "materialSlider3";
-            this.materialSlider3.Value = 100;
+            this.mouseSlider.Depth = 0;
+            this.mouseSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mouseSlider.Location = new System.Drawing.Point(245, 378);
+            this.mouseSlider.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mouseSlider.Name = "mouseSlider";
+            this.mouseSlider.ShowText = false;
+            this.mouseSlider.ShowValue = false;
+            this.mouseSlider.Size = new System.Drawing.Size(125, 40);
+            this.mouseSlider.TabIndex = 11;
+            this.mouseSlider.Text = "";
+            this.mouseSlider.Value = 100;
             // 
             // mouseSensitivityLabel
             // 
@@ -284,11 +286,11 @@
             this.ClientSize = new System.Drawing.Size(380, 480);
             this.Controls.Add(this.validateFilesButton);
             this.Controls.Add(this.mouseSensitivityLabel);
-            this.Controls.Add(this.materialSlider3);
+            this.Controls.Add(this.mouseSlider);
             this.Controls.Add(this.soundVolumeLabel);
-            this.Controls.Add(this.materialSlider2);
+            this.Controls.Add(this.soundSlider);
             this.Controls.Add(this.musicVolumeLabel);
-            this.Controls.Add(this.materialSlider1);
+            this.Controls.Add(this.musicSlider);
             this.Controls.Add(this.windowedModeLabel);
             this.Controls.Add(this.windowedModeSwitch);
             this.Controls.Add(this.resolutionBoxY);
@@ -302,6 +304,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Settings";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,11 +319,11 @@
         private MaterialSkin.Controls.MaterialTextBox2 resolutionBoxY;
         private MaterialSkin.Controls.MaterialSwitch windowedModeSwitch;
         private MaterialSkin.Controls.MaterialLabel windowedModeLabel;
-        private MaterialSkin.Controls.MaterialSlider materialSlider1;
+        private MaterialSkin.Controls.MaterialSlider musicSlider;
         private MaterialSkin.Controls.MaterialLabel musicVolumeLabel;
-        private MaterialSkin.Controls.MaterialSlider materialSlider2;
+        private MaterialSkin.Controls.MaterialSlider soundSlider;
         private MaterialSkin.Controls.MaterialLabel soundVolumeLabel;
-        private MaterialSkin.Controls.MaterialSlider materialSlider3;
+        private MaterialSkin.Controls.MaterialSlider mouseSlider;
         private MaterialSkin.Controls.MaterialLabel mouseSensitivityLabel;
         private MaterialSkin.Controls.MaterialButton validateFilesButton;
     }
