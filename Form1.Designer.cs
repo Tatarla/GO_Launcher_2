@@ -312,6 +312,7 @@
             this.nicknameBox.WaterMark = "Nickname";
             this.nicknameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.nicknameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.nicknameBox.TextChanged += new System.EventHandler(this.nicknameBox_TextChanged);
             // 
             // mainProgressBar
             // 
@@ -339,6 +340,7 @@
             this.playButton.UseCustomBackColor = true;
             this.playButton.UseSelectable = true;
             this.playButton.UseStyleColors = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // MainForm
             // 

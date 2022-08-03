@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Net;
+using Microsoft.Win32;
 
 namespace GOR_Launcher
 {
@@ -13,6 +14,8 @@ namespace GOR_Launcher
         private static string   serverAddress;
         private static int      connectionAvailable;
         private static int      onlinePlayers;
+        private static string   world;
+        private static string   playerNickname;
 
         public static void Initialize()
         {
@@ -23,6 +26,7 @@ namespace GOR_Launcher
             XmlNode rootNode    = configXml.SelectSingleNode("root");
             serverAddress       = rootNode.SelectSingleNode("address").InnerText;
             connectionAvailable = Convert.ToInt16(rootNode.SelectSingleNode("available").InnerText);
+            world               = rootNode.SelectSingleNode("world").InnerText;
 
             // Parsing player counter
             using (var wc = new WebClient())
@@ -44,6 +48,17 @@ namespace GOR_Launcher
             }
         }
 
+        public static void UpdateRegistry()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+            key = key.CreateSubKey("G2O", true);
+
+            key.SetValue("ip_port",     serverAddress);
+            key.SetValue("nickname",    playerNickname);
+            key.SetValue("world",       world);
+        }
+
+        public static void UpdateNickname(string nickname)  { playerNickname = nickname; }
         public static string    GetServerAddress()          { return serverAddress; }
         public static bool      IsConnectionAvailable()     { return connectionAvailable == 1; }
         public static int       GetOnlinePlayers()          { return connectionAvailable == 1 ? onlinePlayers : 0; }

@@ -161,5 +161,15 @@ namespace GOR_Launcher
         {
             System.Diagnostics.Process.Start(Constants.WEBSITE_LINK);
         }
+
+        private void nicknameBox_TextChanged(object sender, EventArgs e)
+        {
+            CConfig.UpdateNickname(nicknameBox.Text);
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            CConfig.UpdateRegistry();
+        }
     }
 }

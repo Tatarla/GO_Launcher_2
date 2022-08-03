@@ -76,8 +76,8 @@ namespace GOR_Launcher
 
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CGameConfig.SetValue("zVidResFullscreenX", resolutionBoxX.Text);
-            CGameConfig.SetValue("zVidResFullscreenY", resolutionBoxY.Text);
+            if (resolutionBoxX.Text.Length != 0) CGameConfig.SetValue("zVidResFullscreenX", resolutionBoxX.Text);
+            if (resolutionBoxY.Text.Length != 0) CGameConfig.SetValue("zVidResFullscreenY", resolutionBoxY.Text);
 
             if (windowedModeSwitch.Checked)
                 CGameConfig.SetValue("zStartupWindowed", "1");
