@@ -138,6 +138,12 @@
   <data name="playButton" xml:space="preserve">
     <value>Играть</value>
   </data>
+  <data name="serverStatusOffline" xml:space="preserve">
+    <value>Сервер временно недоступен!</value>
+  </data>
+  <data name="serverStatusReady" xml:space="preserve">
+    <value>Сервер активен и доступен для подключения!</value>
+  </data>
   <data name="settings_header" xml:space="preserve">
     <value>Настройки</value>
   </data>

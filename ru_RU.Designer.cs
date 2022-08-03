@@ -124,6 +124,24 @@ namespace GOR_Launcher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Сервер временно недоступен!.
+        /// </summary>
+        internal static string serverStatusOffline {
+            get {
+                return ResourceManager.GetString("serverStatusOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сервер активен и доступен для подключения!.
+        /// </summary>
+        internal static string serverStatusReady {
+            get {
+                return ResourceManager.GetString("serverStatusReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Настройки.
         /// </summary>
         internal static string settings_header {

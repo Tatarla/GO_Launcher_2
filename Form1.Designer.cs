@@ -42,7 +42,7 @@
             this.newsPanel = new System.Windows.Forms.Panel();
             this.newsBanner = new System.Windows.Forms.PictureBox();
             this.serverStatusPanel = new System.Windows.Forms.Panel();
-            this.serrverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.serverStatusIcon = new FontAwesome.Sharp.IconPictureBox();
             this.serverStatusText = new System.Windows.Forms.Label();
             this.mainProgressLabel = new System.Windows.Forms.Label();
             this.nicknameBox = new MetroFramework.Controls.MetroTextBox();
@@ -54,7 +54,7 @@
             this.newsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).BeginInit();
             this.serverStatusPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serverStatusIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // addLinksPanel
@@ -71,8 +71,8 @@
             // 
             this.websiteLink.BackColor = System.Drawing.Color.Transparent;
             this.websiteLink.FlatAppearance.BorderSize = 0;
-            this.websiteLink.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.websiteLink.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.websiteLink.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.websiteLink.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.websiteLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.websiteLink.IconChar = FontAwesome.Sharp.IconChar.Link;
             this.websiteLink.IconColor = System.Drawing.Color.White;
@@ -84,6 +84,7 @@
             this.websiteLink.TabIndex = 4;
             this.websiteLink.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.websiteLink.UseVisualStyleBackColor = false;
+            this.websiteLink.Click += new System.EventHandler(this.websiteLink_Click);
             // 
             // discordButton
             // 
@@ -102,6 +103,7 @@
             this.discordButton.TabIndex = 3;
             this.discordButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.discordButton.UseVisualStyleBackColor = false;
+            this.discordButton.Click += new System.EventHandler(this.discordButton_Click);
             // 
             // mainToolBox
             // 
@@ -145,9 +147,8 @@
             this.onlineCounter.ForeColor = System.Drawing.Color.White;
             this.onlineCounter.Location = new System.Drawing.Point(26, 5);
             this.onlineCounter.Name = "onlineCounter";
-            this.onlineCounter.Size = new System.Drawing.Size(107, 13);
+            this.onlineCounter.Size = new System.Drawing.Size(0, 13);
             this.onlineCounter.TabIndex = 8;
-            this.onlineCounter.Text = "Игроков онлайн: 56";
             // 
             // onlineCounterIcon
             // 
@@ -237,25 +238,25 @@
             // serverStatusPanel
             // 
             this.serverStatusPanel.BackColor = System.Drawing.Color.Transparent;
-            this.serverStatusPanel.Controls.Add(this.serrverStatusIcon);
+            this.serverStatusPanel.Controls.Add(this.serverStatusIcon);
             this.serverStatusPanel.Controls.Add(this.serverStatusText);
             this.serverStatusPanel.Location = new System.Drawing.Point(349, 37);
             this.serverStatusPanel.Name = "serverStatusPanel";
             this.serverStatusPanel.Size = new System.Drawing.Size(395, 35);
             this.serverStatusPanel.TabIndex = 9;
             // 
-            // serrverStatusIcon
+            // serverStatusIcon
             // 
-            this.serrverStatusIcon.BackColor = System.Drawing.Color.Transparent;
-            this.serrverStatusIcon.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
-            this.serrverStatusIcon.IconColor = System.Drawing.Color.White;
-            this.serrverStatusIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.serrverStatusIcon.IconSize = 35;
-            this.serrverStatusIcon.Location = new System.Drawing.Point(19, 2);
-            this.serrverStatusIcon.Name = "serrverStatusIcon";
-            this.serrverStatusIcon.Size = new System.Drawing.Size(35, 35);
-            this.serrverStatusIcon.TabIndex = 10;
-            this.serrverStatusIcon.TabStop = false;
+            this.serverStatusIcon.BackColor = System.Drawing.Color.Transparent;
+            this.serverStatusIcon.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            this.serverStatusIcon.IconColor = System.Drawing.Color.White;
+            this.serverStatusIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.serverStatusIcon.IconSize = 35;
+            this.serverStatusIcon.Location = new System.Drawing.Point(19, 2);
+            this.serverStatusIcon.Name = "serverStatusIcon";
+            this.serverStatusIcon.Size = new System.Drawing.Size(35, 35);
+            this.serverStatusIcon.TabIndex = 10;
+            this.serverStatusIcon.TabStop = false;
             // 
             // serverStatusText
             // 
@@ -265,7 +266,6 @@
             this.serverStatusText.Name = "serverStatusText";
             this.serverStatusText.Size = new System.Drawing.Size(395, 35);
             this.serverStatusText.TabIndex = 1;
-            this.serverStatusText.Text = "Сервер активен и доступен для подключения";
             this.serverStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainProgressLabel
@@ -371,7 +371,7 @@
             this.newsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.newsBanner)).EndInit();
             this.serverStatusPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.serrverStatusIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serverStatusIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,7 +389,7 @@
         private System.Windows.Forms.Label onlineCounter;
         private System.Windows.Forms.Panel serverStatusPanel;
         private System.Windows.Forms.Label serverStatusText;
-        private FontAwesome.Sharp.IconPictureBox serrverStatusIcon;
+        private FontAwesome.Sharp.IconPictureBox serverStatusIcon;
         private FontAwesome.Sharp.IconPictureBox onlineCounterIcon;
         private System.Windows.Forms.PictureBox newsBanner;
         private System.Windows.Forms.Label mainProgressLabel;

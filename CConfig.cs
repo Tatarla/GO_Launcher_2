@@ -29,7 +29,6 @@ namespace GOR_Launcher
             {
                 try
                 {
-                    var amogus = string.Format(Constants.G2O_API_URL, serverAddress);
                     var json = wc.DownloadString(string.Format(Constants.G2O_API_URL, serverAddress));
                     var json_decode = System.Web.Helpers.Json.Decode(json);
 

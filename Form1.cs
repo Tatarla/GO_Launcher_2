@@ -24,6 +24,8 @@ namespace GOR_Launcher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            playButton.Enabled = false;
+
             // Initializing default language
             CConfig.Initialize();
             CLocalization.Initialize();
@@ -34,7 +36,6 @@ namespace GOR_Launcher
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
-            serverStatusPanel.BackColor      = Constants.SERVER_STATUS_OK_COLOR;
             playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
 
             Translate();
@@ -49,6 +50,8 @@ namespace GOR_Launcher
             nicknameBox.PromptText  = CLocalization.Get("nicknameInput");
 
             onlineCounter.Text = string.Format("{0} {1}", CLocalization.Get("onlinePlayers"), CConfig.GetOnlinePlayers());
+
+            UpdateServerStatus();
 
         }
 
@@ -71,7 +74,31 @@ namespace GOR_Launcher
 
         public void SetPlayButton(bool value)
         {
-            playButton.Enabled = value;
+            if (value == true)
+            {
+                if (CConfig.IsConnectionAvailable())
+                {
+                    playButton.Enabled = value;
+                }
+            }
+            else
+                playButton.Enabled = value;
+        }
+
+        public void UpdateServerStatus()
+        {
+            if (CConfig.IsConnectionAvailable())
+            {
+                serverStatusPanel.BackColor     = Constants.SERVER_STATUS_OK_COLOR;
+                serverStatusText.Text           = CLocalization.Get("serverStatusReady");
+                serverStatusIcon.IconChar       = FontAwesome.Sharp.IconChar.CheckSquare;
+            }
+            else
+            {
+                serverStatusPanel.BackColor     = Constants.SERVER_STATUS_OFF_COLOR;
+                serverStatusText.Text           = CLocalization.Get("serverStatusOffline");
+                serverStatusIcon.IconChar       = FontAwesome.Sharp.IconChar.Warning;
+            }
         }
 
 
@@ -110,6 +137,7 @@ namespace GOR_Launcher
         private void addFilesButton_Click(object sender, EventArgs e)
         {
             AddFilesForm newForm    = new AddFilesForm();
+            newForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             CLocalization.UpdateAddFilesForm(newForm);
             newForm.StartPosition   = FormStartPosition.CenterParent;
             newForm.ShowDialog(this);
@@ -118,6 +146,7 @@ namespace GOR_Launcher
         private void settingsButton_Click(object sender, EventArgs e)
         {
             SettingsForm newForm = new SettingsForm();
+            newForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             CLocalization.UpdateSettingsForm(newForm);
             newForm.StartPosition = FormStartPosition.CenterParent;
             newForm.ShowDialog(this);
@@ -126,6 +155,16 @@ namespace GOR_Launcher
         private void metroTextBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void discordButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Constants.DISCORD_LINK);
+        }
+
+        private void websiteLink_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Constants.WEBSITE_LINK);
         }
     }
 }

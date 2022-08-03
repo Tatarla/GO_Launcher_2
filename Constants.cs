@@ -18,6 +18,9 @@ namespace GOR_Launcher
         public static string VERSION_FILE_URL               = "http://rgc-host.ru/testLauncher/version.xml";
         public static string REMOTE_CONFIG_URL              = "http://rgc-host.ru/testLauncher/config.xml";
 
+        public static string DISCORD_LINK                   = "https://discord.gg/JNqbr3TBjH";
+        public static string WEBSITE_LINK                   = "https://g2-mp.ru/";
+
         // DO NOT change that if you dont know what it is
         public static string G2O_API_URL                    = "http://api.gothic-online.com.pl/master/server/{0}/";
 
