@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MaterialSkin;
+using System.IO;
 
 namespace GOR_Launcher
 {
@@ -32,7 +33,15 @@ namespace GOR_Launcher
 
             // Initializing default language
             CConfig.Initialize();
-            CGameConfig.Initialize();
+
+            if (!CGameConfig.Initialize()) Close();
+            if (!File.Exists(Constants.GAME_EXEC) || !File.Exists(Constants.G2O_EXEC))
+            {
+                MessageBox.Show("Can't find game executable file!\nPlease, put this launcher in the root folder of your Gothic 2: Night of the Raven game.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+
             CLocalization.Initialize();
             CLocalization.UpdateMainForm(this);
 
