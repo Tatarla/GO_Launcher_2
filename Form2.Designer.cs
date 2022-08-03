@@ -61,6 +61,7 @@
             this.addDx11Switch.Size = new System.Drawing.Size(58, 37);
             this.addDx11Switch.TabIndex = 2;
             this.addDx11Switch.UseVisualStyleBackColor = false;
+            this.addDx11Switch.CheckedChanged += new System.EventHandler(this.addDx11Switch_CheckedChanged);
             // 
             // addFontsLabel
             // 
@@ -89,6 +90,7 @@
             this.addFontsSwitch.Size = new System.Drawing.Size(58, 37);
             this.addFontsSwitch.TabIndex = 4;
             this.addFontsSwitch.UseVisualStyleBackColor = false;
+            this.addFontsSwitch.CheckedChanged += new System.EventHandler(this.addFontsSwitch_CheckedChanged);
             // 
             // AddFilesForm
             // 

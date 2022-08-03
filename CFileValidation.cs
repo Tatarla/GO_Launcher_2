@@ -11,17 +11,24 @@ namespace GOR_Launcher
 {
     public static class CFileValidation
     {
-        static XmlDocument              mainFileXml;
-        static List<CDownloadFile>      downloadList;
-        static List<CDownloadFile>      deleteFiles;
-        static WebClient                dlClient;
+        static XmlDocument                  mainFileXml;
+        static List<CDownloadFile>          downloadList;
+        static List<CDownloadFile>          deleteFiles;
+        static WebClient                    dlClient;
 
-        static MainForm                 mainForm;
+        static Dictionary<string, string>   additionalFiles;
+
+        static MainForm                     mainForm;
 
         public static async Task Initialize(MainForm form)
         {
             downloadList    = new List<CDownloadFile>();
             deleteFiles     = new List<CDownloadFile>();
+            additionalFiles = new Dictionary<string, string>();
+
+            // NOTE: tag should be the same, as in the Settings
+            RegisterAdditionalFile("add_DX11", Constants.ADDFILES_DX11);
+            RegisterAdditionalFile("add_customFonts", Constants.ADDFILES_CUSTOMFONTS);
 
             mainForm        = form;
 
@@ -35,7 +42,7 @@ namespace GOR_Launcher
 
         public static bool IsReady()
         {
-            if (downloadList.Count == 0)
+            if (downloadList.Count == 0 && deleteFiles.Count == 0)
             {
                 mainForm.SetPlayButton(true);
                 mainForm.SetProgressBar(100);
@@ -46,12 +53,33 @@ namespace GOR_Launcher
             return false;
         }
 
+        private static void RegisterAdditionalFile(string tag, string path)
+        {
+            additionalFiles.Add(tag, path);
+        }
+
+        public static void LoadAdditionalFile(string tag)
+        {
+            CSettings.Set(tag, true);
+            downloadList = ParseXmlFile(additionalFiles[tag]);
+            if (!IsReady())
+                StartDownlaod();
+        }
+
+        public static void DeleteAdditinalFile(string tag)
+        {
+            CSettings.Set(tag, false);
+            deleteFiles = ParseXmlFile(additionalFiles[tag]);
+            if (!IsReady())
+                DeleteFiles();
+        }
+
         public static List<CDownloadFile> ParseXmlFile(string path)
         {
             List<CDownloadFile> returnList = new List<CDownloadFile>();
 
             mainFileXml = new XmlDocument();
-            mainFileXml.Load(path);
+            mainFileXml.Load(path + "files.xml");
 
             XmlNode fileListNode = mainFileXml.SelectSingleNode("file_list");
             if (fileListNode == null)
@@ -65,22 +93,32 @@ namespace GOR_Launcher
                 string fileUrl  = fileNode.SelectSingleNode("fileUrl").InnerText;
                 string filePath = fileNode.SelectSingleNode("filePath").InnerText;
 
-                // Checking if is file located on the remote host
+                fileUrl = path + "files/" + fileUrl;
+
                 if (!fileUrl.Contains("http://") && !fileUrl.Contains("https://"))
-                    fileUrl = Constants.FILE_DOWNLOAD_URL + fileUrl;
+                    fileUrl = path + "files/" + fileUrl;
 
                 returnList.Add(new CDownloadFile(fileMd5, filePath, fileName, fileUrl));
             }
 
             // Adding XML file and version XML every time (only for remote)
-            Uri uriXml = new Uri(path);
+            Uri uriXml = new Uri(path + "files.xml");
             if (path.Contains("http://") || path.Contains("https://"))
             {
-                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Path.GetFileName(uriXml.LocalPath), path));
+                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Path.GetFileName(uriXml.LocalPath), path + "files.xml"));
                 returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Constants.VERSION_FILE_NAME, Constants.VERSION_FILE_URL));
             }
 
             return returnList;
+        }
+
+        public static void DeleteFiles()
+        {
+            foreach (CDownloadFile file in deleteFiles)
+                File.Delete(file.getFullName());
+
+            deleteFiles.Clear();
+            IsReady();
         }
 
         // Async download start and events
@@ -125,9 +163,7 @@ namespace GOR_Launcher
 
         public static void DlCompleted()
         {
-            // Saving meta data
-            
-            IsReady();
+            DeleteFiles();
         }
 
         // *** *** //
@@ -201,7 +237,7 @@ namespace GOR_Launcher
             List<CDownloadFile> localFileList = new List<CDownloadFile>();
 
             if (File.Exists(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH + "files.xml")))
-                localFileList = ParseXmlFile(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH + "files.xml"));
+                localFileList = ParseXmlFile(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH));
 
             // Creating remote file list
             List<CDownloadFile> remoteFileList = ParseXmlFile(Constants.FILE_LIST_URL);
@@ -212,7 +248,10 @@ namespace GOR_Launcher
             for (int i = 0; i < remoteFileList.Count; i++)
             {
                 if (remoteFileList[i].getFullName().Contains(".launcher"))
+                {
+                    downloadList.Add(remoteFileList[i]);
                     continue;
+                }
 
                 mainForm.SetProgressBar(Convert.ToInt16(percentage * i));
                 mainForm.SetProgressLabel(CLocalization.Get("fileValidating") + " " + remoteFileList[i].getName());

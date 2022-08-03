@@ -14,15 +14,50 @@ namespace GOR_Launcher
 {
     public partial class AddFilesForm : MaterialForm
     {
+        private bool initialized = false;
         public AddFilesForm()
         {
             InitializeComponent();
             Translate();
+
+            addDx11Switch.Checked   = Convert.ToBoolean(CSettings.Get("add_DX11"));
+            addFontsSwitch.Checked  = Convert.ToBoolean(CSettings.Get("add_customFonts"));
+            initialized             = true;
         }
 
         public void Translate()
         {
             this.Text = CLocalization.Get("additionalfiles_header");
+        }
+
+        private void addDx11Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!initialized) return;
+            if (!CFileValidation.IsReady())
+            {
+                addDx11Switch.Checked = Convert.ToBoolean(CSettings.Get("add_DX11"));
+                return;
+            }
+
+            if (addDx11Switch.Checked)
+                CFileValidation.LoadAdditionalFile("add_DX11");
+            else
+                CFileValidation.DeleteAdditinalFile("add_DX11");
+        }
+
+        private void addFontsSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!initialized) return;
+            if (!CFileValidation.IsReady())
+            {
+                addFontsSwitch.Checked = Convert.ToBoolean(CSettings.Get("add_customFonts"));
+                return;
+            }
+
+            if (addFontsSwitch.Checked)
+                CFileValidation.LoadAdditionalFile("add_customFonts");
+            else
+                CFileValidation.DeleteAdditinalFile("add_customFonts");
         }
     }
 }

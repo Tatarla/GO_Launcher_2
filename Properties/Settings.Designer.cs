@@ -34,5 +34,29 @@ namespace GOR_Launcher.Properties {
                 this["language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool add_DX11 {
+            get {
+                return ((bool)(this["add_DX11"]));
+            }
+            set {
+                this["add_DX11"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool add_customFonts {
+            get {
+                return ((bool)(this["add_customFonts"]));
+            }
+            set {
+                this["add_customFonts"] = value;
+            }
+        }
     }
 }
