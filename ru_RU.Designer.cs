@@ -106,6 +106,15 @@ namespace GOR_Launcher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Игроков онлайн:.
+        /// </summary>
+        internal static string onlinePlayers {
+            get {
+                return ResourceManager.GetString("onlinePlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Играть.
         /// </summary>
         internal static string playButton {

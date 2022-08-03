@@ -16,6 +16,10 @@ namespace GOR_Launcher
         public static string FILE_LIST_URL                  = "http://rgc-host.ru/testLauncher/files.xml";
         public static string FILE_DOWNLOAD_URL              = "http://rgc-host.ru/testLauncher/files/";
         public static string VERSION_FILE_URL               = "http://rgc-host.ru/testLauncher/version.xml";
+        public static string REMOTE_CONFIG_URL              = "http://rgc-host.ru/testLauncher/config.xml";
+
+        // DO NOT change that if you dont know what it is
+        public static string G2O_API_URL                    = "http://api.gothic-online.com.pl/master/server/{0}/";
 
         public static string CONFIG_FOLDER_PATH             = ".launcher/";
         public static string VERSION_FILE_NAME              = "version.xml";

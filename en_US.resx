@@ -132,6 +132,9 @@
   <data name="nicknameInput" xml:space="preserve">
     <value>Nickname</value>
   </data>
+  <data name="onlinePlayers" xml:space="preserve">
+    <value>Online players:</value>
+  </data>
   <data name="playButton" xml:space="preserve">
     <value>Play</value>
   </data>

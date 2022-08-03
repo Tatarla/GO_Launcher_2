@@ -25,6 +25,7 @@ namespace GOR_Launcher
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Initializing default language
+            CConfig.Initialize();
             CLocalization.Initialize();
             CLocalization.UpdateMainForm(this);
 
@@ -47,7 +48,7 @@ namespace GOR_Launcher
             nicknameBox.WaterMark   = CLocalization.Get("nicknameInput");
             nicknameBox.PromptText  = CLocalization.Get("nicknameInput");
 
-
+            onlineCounter.Text = string.Format("{0} {1}", CLocalization.Get("onlinePlayers"), CConfig.GetOnlinePlayers());
 
         }
 
