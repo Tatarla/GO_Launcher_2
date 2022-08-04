@@ -10,16 +10,19 @@ namespace GOR_Launcher
 {
     public static class Constants
     {
-        public static string DEFAULT_LANGUAGE               = "en_US";
+        public static string DEFAULT_LANGUAGE               = "ru_RU";
+        public static bool   ALT_CONNECTION                 = false;
 
-        public static string BANNER_URL                     = "http://g2-mp.ru/files/";
-        public static string FILE_LIST_URL                  = "http://g2-mp.ru/files/";
-        public static string VERSION_FILE_URL               = "http://g2-mp.ru/files/version.xml";
-        public static string REMOTE_CONFIG_URL              = "http://g2-mp.ru/files/config.xml";
+        public static string DEFAULT_ADDRESS                = "http://g2-mp.ru/";
+        public static string ALTERNATIVE_ADDRESS            = "http://185.200.190.211/";
+        public static string BANNER_URL                     = "{0}files/";
+        public static string FILE_LIST_URL                  = "{0}files/";
+        public static string VERSION_FILE_URL               = "{0}files/version.xml";
+        public static string REMOTE_CONFIG_URL              = "{0}files/config.xml";
 
-        public static string ADDFILES_DX11                  = "http://g2-mp.ru/files/additional_files/DX11/";
-        public static string ADDFILES_CUSTOMFONTS           = "http://g2-mp.ru/files/additional_files/Fonts/";
-        public static string ADDFILES_NOGRASS               = "http://g2-mp.ru/files/additional_files/NoGrass/";
+        public static string ADDFILES_DX11                  = "{0}files/additional_files/DX11/";
+        public static string ADDFILES_CUSTOMFONTS           = "{0}files/additional_files/Fonts/";
+        public static string ADDFILES_NOGRASS               = "{0}files/additional_files/NoGrass/";
 
         public static string DISCORD_LINK                   = "https://discord.gg/JNqbr3TBjH";
         public static string WEBSITE_LINK                   = "https://g2-mp.ru/";

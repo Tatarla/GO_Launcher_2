@@ -15,6 +15,7 @@ namespace GOR_Launcher
         static List<CDownloadFile>          downloadList;
         static List<CDownloadFile>          deleteFiles;
         static WebClient                    dlClient;
+        static bool                         downloadingLauncher = false;
 
         static Dictionary<string, string>   additionalFiles;
 
@@ -26,10 +27,14 @@ namespace GOR_Launcher
             deleteFiles     = new List<CDownloadFile>();
             additionalFiles = new Dictionary<string, string>();
 
+            // Delete outdated launcher
+            if (File.Exists(Constants.CONFIG_FOLDER_PATH + AppDomain.CurrentDomain.FriendlyName))
+                File.Delete(Constants.CONFIG_FOLDER_PATH + AppDomain.CurrentDomain.FriendlyName);
+
             // NOTE: tag should be the same, as in the Settings
-            RegisterAdditionalFile("add_DX11",          Constants.ADDFILES_DX11);
-            RegisterAdditionalFile("add_customFonts",   Constants.ADDFILES_CUSTOMFONTS);
-            RegisterAdditionalFile("add_noGrass",       Constants.ADDFILES_NOGRASS);
+            RegisterAdditionalFile("add_DX11",          CUrlManager.Get(Constants.ADDFILES_DX11));
+            RegisterAdditionalFile("add_customFonts",   CUrlManager.Get(Constants.ADDFILES_CUSTOMFONTS));
+            RegisterAdditionalFile("add_noGrass",       CUrlManager.Get(Constants.ADDFILES_NOGRASS));
 
             mainForm        = form;
 
@@ -107,7 +112,7 @@ namespace GOR_Launcher
             if (path.Contains("http://") || path.Contains("https://"))
             {
                 returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Path.GetFileName(uriXml.LocalPath), path + "files.xml"));
-                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Constants.VERSION_FILE_NAME, Constants.VERSION_FILE_URL));
+                returnList.Add(new CDownloadFile("none", Constants.CONFIG_FOLDER_PATH, Constants.VERSION_FILE_NAME, CUrlManager.Get(Constants.VERSION_FILE_URL)));
             }
 
             return returnList;
@@ -158,6 +163,12 @@ namespace GOR_Launcher
                 return;
             }
 
+            if (downloadList[0].getName() == AppDomain.CurrentDomain.FriendlyName)
+            {
+                File.Move(AppDomain.CurrentDomain.FriendlyName, Constants.CONFIG_FOLDER_PATH + AppDomain.CurrentDomain.FriendlyName);
+                downloadingLauncher = true;
+            }
+
             Directory.CreateDirectory(downloadList[0].getPath());
             dlClient.DownloadFileAsync(new Uri(downloadList[0].getFullUrl()), downloadList[0].getFullName());
         }
@@ -165,6 +176,8 @@ namespace GOR_Launcher
         public static void DlCompleted()
         {
             DeleteFiles();
+            if (downloadingLauncher)
+                mainForm.Close();
         }
 
         // *** *** //
@@ -211,7 +224,7 @@ namespace GOR_Launcher
 
             // Getting remote version
             verXml = new XmlDocument();
-            verXml.Load(Constants.VERSION_FILE_URL);
+            verXml.Load(CUrlManager.Get(Constants.VERSION_FILE_URL));
             string remoteVersion = verXml.SelectSingleNode("info").SelectSingleNode("version").InnerText;
 
             return localVersion == remoteVersion;
@@ -241,7 +254,7 @@ namespace GOR_Launcher
                 localFileList = ParseXmlFile(Path.GetFullPath(Constants.CONFIG_FOLDER_PATH));
 
             // Creating remote file list
-            List<CDownloadFile> remoteFileList = ParseXmlFile(Constants.FILE_LIST_URL);
+            List<CDownloadFile> remoteFileList = ParseXmlFile(CUrlManager.Get(Constants.FILE_LIST_URL));
 
             // Validating remote files
             double percentage = Math.Round(remoteFileList.Count / 100.0, 1);

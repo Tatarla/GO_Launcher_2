@@ -144,6 +144,9 @@
   <data name="serverStatusReady" xml:space="preserve">
     <value>Сервер активен и доступен для подключения!</value>
   </data>
+  <data name="settings_altConnection" xml:space="preserve">
+    <value>Альтернативное подключение:</value>
+  </data>
   <data name="settings_header" xml:space="preserve">
     <value>Настройки</value>
   </data>

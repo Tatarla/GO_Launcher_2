@@ -42,6 +42,8 @@
             this.mouseSlider = new MaterialSkin.Controls.MaterialSlider();
             this.mouseSensitivityLabel = new MaterialSkin.Controls.MaterialLabel();
             this.validateFilesButton = new MaterialSkin.Controls.MaterialButton();
+            this.altConnectionLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.altConnectionSwitch = new MaterialSkin.Controls.MaterialSwitch();
             this.SuspendLayout();
             // 
             // languageSelectBox
@@ -267,7 +269,7 @@
             this.validateFilesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.validateFilesButton.HighEmphasis = true;
             this.validateFilesButton.Icon = null;
-            this.validateFilesButton.Location = new System.Drawing.Point(3, 441);
+            this.validateFilesButton.Location = new System.Drawing.Point(3, 474);
             this.validateFilesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.validateFilesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.validateFilesButton.Name = "validateFilesButton";
@@ -280,10 +282,39 @@
             this.validateFilesButton.UseVisualStyleBackColor = true;
             this.validateFilesButton.Click += new System.EventHandler(this.validateFilesButton_Click);
             // 
+            // altConnectionLabel
+            // 
+            this.altConnectionLabel.AutoSize = true;
+            this.altConnectionLabel.Depth = 0;
+            this.altConnectionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.altConnectionLabel.Location = new System.Drawing.Point(16, 438);
+            this.altConnectionLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.altConnectionLabel.Name = "altConnectionLabel";
+            this.altConnectionLabel.Size = new System.Drawing.Size(162, 19);
+            this.altConnectionLabel.TabIndex = 14;
+            this.altConnectionLabel.Text = "Alternative connection:";
+            // 
+            // altConnectionSwitch
+            // 
+            this.altConnectionSwitch.AutoSize = true;
+            this.altConnectionSwitch.Depth = 0;
+            this.altConnectionSwitch.Location = new System.Drawing.Point(312, 429);
+            this.altConnectionSwitch.Margin = new System.Windows.Forms.Padding(0);
+            this.altConnectionSwitch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.altConnectionSwitch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.altConnectionSwitch.Name = "altConnectionSwitch";
+            this.altConnectionSwitch.Ripple = true;
+            this.altConnectionSwitch.Size = new System.Drawing.Size(58, 37);
+            this.altConnectionSwitch.TabIndex = 15;
+            this.altConnectionSwitch.UseVisualStyleBackColor = true;
+            this.altConnectionSwitch.CheckedChanged += new System.EventHandler(this.altConnectionSwitch_CheckedChanged);
+            // 
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(380, 480);
+            this.ClientSize = new System.Drawing.Size(380, 513);
+            this.Controls.Add(this.altConnectionSwitch);
+            this.Controls.Add(this.altConnectionLabel);
             this.Controls.Add(this.validateFilesButton);
             this.Controls.Add(this.mouseSensitivityLabel);
             this.Controls.Add(this.mouseSlider);
@@ -326,5 +357,7 @@
         private MaterialSkin.Controls.MaterialSlider mouseSlider;
         private MaterialSkin.Controls.MaterialLabel mouseSensitivityLabel;
         private MaterialSkin.Controls.MaterialButton validateFilesButton;
+        private MaterialSkin.Controls.MaterialLabel altConnectionLabel;
+        private MaterialSkin.Controls.MaterialSwitch altConnectionSwitch;
     }
 }

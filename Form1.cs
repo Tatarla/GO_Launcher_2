@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MaterialSkin;
 using System.IO;
+using System.Net;
 
 namespace GOR_Launcher
 {
@@ -31,6 +32,8 @@ namespace GOR_Launcher
         {
             playButton.Enabled = false;
 
+            // Checking connection
+            CUrlManager.CheckConnection();
             // Initializing default language
             CConfig.Initialize();
 

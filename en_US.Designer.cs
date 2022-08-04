@@ -142,6 +142,15 @@ namespace GOR_Launcher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternative connection:.
+        /// </summary>
+        internal static string settings_altConnection {
+            get {
+                return ResourceManager.GetString("settings_altConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string settings_header {

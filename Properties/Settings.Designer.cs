@@ -70,5 +70,17 @@ namespace GOR_Launcher.Properties {
                 this["add_noGrass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool retranslatorEnabled {
+            get {
+                return ((bool)(this["retranslatorEnabled"]));
+            }
+            set {
+                this["retranslatorEnabled"] = value;
+            }
+        }
     }
 }

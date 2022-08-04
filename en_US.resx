@@ -144,6 +144,9 @@
   <data name="serverStatusReady" xml:space="preserve">
     <value>Server is up and available for connection!</value>
   </data>
+  <data name="settings_altConnection" xml:space="preserve">
+    <value>Alternative connection:</value>
+  </data>
   <data name="settings_header" xml:space="preserve">
     <value>Settings</value>
   </data>

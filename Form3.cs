@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Globalization;
 
 namespace GOR_Launcher
 {
@@ -32,9 +33,9 @@ namespace GOR_Launcher
             resolutionBoxX.Text = CGameConfig.GetValue("zVidResFullscreenX");
             resolutionBoxY.Text = CGameConfig.GetValue("zVidResFullscreenY");
 
-            int musicValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("musicVolume")) * 100);
-            int soundValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("soundVolume")) * 100);
-            int mouseValue = Convert.ToInt16((Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity")) * 100) / 4);
+            int musicValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("musicVolume"), CultureInfo.InvariantCulture) * 100);
+            int soundValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("soundVolume"), CultureInfo.InvariantCulture) * 100);
+            int mouseValue = Convert.ToInt16((Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity"), CultureInfo.InvariantCulture) * 100) / 4);
 
             musicValue = musicValue > 100 ? 100 : musicValue;
             soundValue = soundValue > 100 ? 100 : soundValue;
@@ -43,6 +44,8 @@ namespace GOR_Launcher
             musicSlider.Value = musicValue;
             soundSlider.Value = soundValue;
             mouseSlider.Value = mouseValue;
+
+            altConnectionSwitch.Checked = Convert.ToBoolean(CSettings.Get("retranslatorEnabled"));
         }
 
         private async void validateFilesButton_Click(object sender, EventArgs e)
@@ -70,6 +73,8 @@ namespace GOR_Launcher
             soundVolumeLabel.Text       = CLocalization.Get("settings_sndvolume");
             mouseSensitivityLabel.Text  = CLocalization.Get("settings_sensitivity");
             validateFilesButton.Text    = CLocalization.Get("settings_validation");
+            altConnectionLabel.Text     = CLocalization.Get("settings_altConnection");
+
         }
 
         private void resolutionBoxX_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,6 +102,12 @@ namespace GOR_Launcher
             CGameConfig.SetValue("mouseSensitivity", Convert.ToString(Math.Round((mouseSlider.Value / 100.0) * 4, 1)));
 
             CGameConfig.SaveConfig();
+        }
+
+        private void altConnectionSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            CConfig.SetRetranslator(altConnectionSwitch.Checked);
+            CSettings.Set("retranslatorEnabled", altConnectionSwitch.Checked);
         }
     }
 }
