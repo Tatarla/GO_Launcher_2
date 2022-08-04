@@ -16,7 +16,7 @@ namespace GOR_Launcher
         public static bool Initialize()
         {
             settingsList = new Dictionary<string, string>();
-            if (!File.Exists(Constants.GAME_CONFIG_PATH))
+            if (!File.Exists(Path.GetFullPath(Constants.GAME_CONFIG_PATH)))
             {
                 MessageBox.Show("Can't find game config file!\nPlease, start your game System/Gothic2.exe for the first time, or contact the developer.",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

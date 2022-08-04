@@ -40,9 +40,9 @@ namespace GOR_Launcher
             soundValue = soundValue > 100 ? 100 : soundValue;
             mouseValue = mouseValue > 100 ? 100 : mouseValue;
 
-            musicSlider.Value = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("musicVolume")) * 100);
-            soundSlider.Value = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("soundVolume")) * 100);
-            mouseSlider.Value = Convert.ToInt16((Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity")) * 100) / 4);
+            musicSlider.Value = musicValue;
+            soundSlider.Value = soundValue;
+            mouseSlider.Value = mouseValue;
         }
 
         private async void validateFilesButton_Click(object sender, EventArgs e)

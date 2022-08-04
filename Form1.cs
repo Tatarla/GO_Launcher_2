@@ -35,12 +35,6 @@ namespace GOR_Launcher
             CConfig.Initialize();
 
             if (!CGameConfig.Initialize()) Close();
-            if (!File.Exists(Constants.GAME_EXEC) || !File.Exists(Constants.G2O_EXEC))
-            {
-                MessageBox.Show("Can't find game executable file!\nPlease, put this launcher in the root folder of your Gothic 2: Night of the Raven game.",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
-            }
 
             CLocalization.Initialize();
             CLocalization.UpdateMainForm(this);
@@ -184,6 +178,13 @@ namespace GOR_Launcher
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(Constants.GAME_EXEC) || !File.Exists(Constants.G2O_EXEC))
+            {
+                MessageBox.Show("Can't find game executable file!\nPlease, put this launcher in the root folder of your Gothic 2: Night of the Raven game.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+
             CConfig.UpdateRegistry();
             G2O_Run(CConfig.GetVersion().Major, CConfig.GetVersion().Minor, CConfig.GetVersion().Build);
         }

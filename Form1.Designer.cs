@@ -365,7 +365,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gothic Online: ARPG";
+            this.Text = "Roleplay Gothic Community";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.addLinksPanel.ResumeLayout(false);
             this.mainToolBox.ResumeLayout(false);
