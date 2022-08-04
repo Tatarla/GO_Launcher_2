@@ -58,5 +58,17 @@ namespace GOR_Launcher.Properties {
                 this["add_customFonts"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool add_noGrass {
+            get {
+                return ((bool)(this["add_noGrass"]));
+            }
+            set {
+                this["add_noGrass"] = value;
+            }
+        }
     }
 }

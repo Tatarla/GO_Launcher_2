@@ -27,8 +27,9 @@ namespace GOR_Launcher
             additionalFiles = new Dictionary<string, string>();
 
             // NOTE: tag should be the same, as in the Settings
-            RegisterAdditionalFile("add_DX11", Constants.ADDFILES_DX11);
-            RegisterAdditionalFile("add_customFonts", Constants.ADDFILES_CUSTOMFONTS);
+            RegisterAdditionalFile("add_DX11",          Constants.ADDFILES_DX11);
+            RegisterAdditionalFile("add_customFonts",   Constants.ADDFILES_CUSTOMFONTS);
+            RegisterAdditionalFile("add_noGrass",       Constants.ADDFILES_NOGRASS);
 
             mainForm        = form;
 

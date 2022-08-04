@@ -32,6 +32,8 @@
             this.addDx11Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.addFontsLabel = new MaterialSkin.Controls.MaterialLabel();
             this.addFontsSwitch = new MaterialSkin.Controls.MaterialSwitch();
+            this.addNoGrassSwitch = new MaterialSkin.Controls.MaterialSwitch();
+            this.addNoGrassLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // addDx11Label
@@ -92,11 +94,42 @@
             this.addFontsSwitch.UseVisualStyleBackColor = false;
             this.addFontsSwitch.CheckedChanged += new System.EventHandler(this.addFontsSwitch_CheckedChanged);
             // 
+            // addNoGrassSwitch
+            // 
+            this.addNoGrassSwitch.AutoSize = true;
+            this.addNoGrassSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.addNoGrassSwitch.Depth = 0;
+            this.addNoGrassSwitch.Location = new System.Drawing.Point(252, 149);
+            this.addNoGrassSwitch.Margin = new System.Windows.Forms.Padding(0);
+            this.addNoGrassSwitch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.addNoGrassSwitch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addNoGrassSwitch.Name = "addNoGrassSwitch";
+            this.addNoGrassSwitch.Ripple = true;
+            this.addNoGrassSwitch.Size = new System.Drawing.Size(58, 37);
+            this.addNoGrassSwitch.TabIndex = 6;
+            this.addNoGrassSwitch.UseVisualStyleBackColor = false;
+            this.addNoGrassSwitch.CheckedChanged += new System.EventHandler(this.noGrassSwitch_CheckedChanged);
+            // 
+            // addNoGrassLabel
+            // 
+            this.addNoGrassLabel.AutoSize = true;
+            this.addNoGrassLabel.BackColor = System.Drawing.Color.Transparent;
+            this.addNoGrassLabel.Depth = 0;
+            this.addNoGrassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addNoGrassLabel.Location = new System.Drawing.Point(11, 158);
+            this.addNoGrassLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addNoGrassLabel.Name = "addNoGrassLabel";
+            this.addNoGrassLabel.Size = new System.Drawing.Size(66, 19);
+            this.addNoGrassLabel.TabIndex = 5;
+            this.addNoGrassLabel.Text = "No Grass";
+            // 
             // AddFilesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 320);
+            this.Controls.Add(this.addNoGrassSwitch);
+            this.Controls.Add(this.addNoGrassLabel);
             this.Controls.Add(this.addFontsSwitch);
             this.Controls.Add(this.addFontsLabel);
             this.Controls.Add(this.addDx11Switch);
@@ -118,5 +151,7 @@
         private MaterialSkin.Controls.MaterialSwitch addDx11Switch;
         private MaterialSkin.Controls.MaterialLabel addFontsLabel;
         private MaterialSkin.Controls.MaterialSwitch addFontsSwitch;
+        private MaterialSkin.Controls.MaterialSwitch addNoGrassSwitch;
+        private MaterialSkin.Controls.MaterialLabel addNoGrassLabel;
     }
 }

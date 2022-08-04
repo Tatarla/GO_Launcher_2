@@ -20,9 +20,10 @@ namespace GOR_Launcher
             InitializeComponent();
             Translate();
 
-            addDx11Switch.Checked   = Convert.ToBoolean(CSettings.Get("add_DX11"));
-            addFontsSwitch.Checked  = Convert.ToBoolean(CSettings.Get("add_customFonts"));
-            initialized             = true;
+            addDx11Switch.Checked       = Convert.ToBoolean(CSettings.Get("add_DX11"));
+            addFontsSwitch.Checked      = Convert.ToBoolean(CSettings.Get("add_customFonts"));
+            addNoGrassSwitch.Checked    = Convert.ToBoolean(CSettings.Get("add_noGrass"));
+            initialized                 = true;
         }
 
         public void Translate()
@@ -58,6 +59,21 @@ namespace GOR_Launcher
                 CFileValidation.LoadAdditionalFile("add_customFonts");
             else
                 CFileValidation.DeleteAdditinalFile("add_customFonts");
+        }
+
+        private void noGrassSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!initialized) return;
+            if (!CFileValidation.IsReady())
+            {
+                addNoGrassSwitch.Checked = Convert.ToBoolean(CSettings.Get("add_noGrass"));
+                return;
+            }
+
+            if (addNoGrassSwitch.Checked)
+                CFileValidation.LoadAdditionalFile("add_noGrass");
+            else
+                CFileValidation.DeleteAdditinalFile("add_noGrass");
         }
     }
 }

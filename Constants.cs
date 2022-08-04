@@ -17,8 +17,9 @@ namespace GOR_Launcher
         public static string VERSION_FILE_URL               = "http://g2-mp.ru/files/version.xml";
         public static string REMOTE_CONFIG_URL              = "http://g2-mp.ru/files/config.xml";
 
-        public static string ADDFILES_DX11                  = "http://rgc-host.ru/testLauncher/addfiles/dx11/";
-        public static string ADDFILES_CUSTOMFONTS           = "http://rgc-host.ru/testLauncher/addfiles/custom_fonts/";
+        public static string ADDFILES_DX11                  = "http://g2-mp.ru/files/additional_files/DX11/";
+        public static string ADDFILES_CUSTOMFONTS           = "http://g2-mp.ru/files/additional_files/Fonts/";
+        public static string ADDFILES_NOGRASS               = "http://g2-mp.ru/files/additional_files/NoGrass/";
 
         public static string DISCORD_LINK                   = "https://discord.gg/JNqbr3TBjH";
         public static string WEBSITE_LINK                   = "https://g2-mp.ru/";
