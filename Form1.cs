@@ -52,6 +52,8 @@ namespace GOR_Launcher
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
             playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
 
+            nicknameBox.Text = CConfig.GetPlayerName();
+
             Translate();
         }
 

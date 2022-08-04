@@ -52,6 +52,17 @@ namespace GOR_Launcher
             }
         }
 
+        public static string GetPlayerName()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+            key = key.CreateSubKey("G2O", true);
+
+            string name = key.GetValue("nickname").ToString();
+            name = name == null ? "" : name;
+
+            return name;
+        }
+
         public static void UpdateRegistry()
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
@@ -60,6 +71,8 @@ namespace GOR_Launcher
             key.SetValue("ip_port",     serverAddress);
             key.SetValue("nickname",    playerNickname);
             key.SetValue("world",       world);
+
+            key.Close();
         }
 
         public static Version   GetVersion()                        { return ver; }

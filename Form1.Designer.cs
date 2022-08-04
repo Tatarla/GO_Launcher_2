@@ -226,6 +226,7 @@
             this.newsPanel.Name = "newsPanel";
             this.newsPanel.Size = new System.Drawing.Size(300, 360);
             this.newsPanel.TabIndex = 3;
+            this.newsPanel.Visible = false;
             // 
             // newsBanner
             // 

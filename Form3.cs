@@ -32,9 +32,17 @@ namespace GOR_Launcher
             resolutionBoxX.Text = CGameConfig.GetValue("zVidResFullscreenX");
             resolutionBoxY.Text = CGameConfig.GetValue("zVidResFullscreenY");
 
+            int musicValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("musicVolume")) * 100);
+            int soundValue = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("soundVolume")) * 100);
+            int mouseValue = Convert.ToInt16((Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity")) * 100) / 4);
+
+            musicValue = musicValue > 100 ? 100 : musicValue;
+            soundValue = soundValue > 100 ? 100 : soundValue;
+            mouseValue = mouseValue > 100 ? 100 : mouseValue;
+
             musicSlider.Value = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("musicVolume")) * 100);
             soundSlider.Value = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("soundVolume")) * 100);
-            mouseSlider.Value = Convert.ToInt16(Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity")) * 100);
+            mouseSlider.Value = Convert.ToInt16((Convert.ToDouble(CGameConfig.GetValue("mouseSensitivity")) * 100) / 4);
         }
 
         private async void validateFilesButton_Click(object sender, EventArgs e)
@@ -86,7 +94,7 @@ namespace GOR_Launcher
 
             CGameConfig.SetValue("musicVolume", Convert.ToString(Math.Round(musicSlider.Value / 100.0, 1)));
             CGameConfig.SetValue("soundVolume", Convert.ToString(Math.Round(soundSlider.Value / 100.0, 1)));
-            CGameConfig.SetValue("mouseSensitivity", Convert.ToString(Math.Round(mouseSlider.Value / 100.0, 1)));
+            CGameConfig.SetValue("mouseSensitivity", Convert.ToString(Math.Round((mouseSlider.Value / 100.0) * 4, 1)));
 
             CGameConfig.SaveConfig();
         }

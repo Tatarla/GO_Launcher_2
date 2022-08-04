@@ -74,7 +74,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon_fulres.ico</ApplicationIcon>
+    <ApplicationIcon>modimage.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -367,6 +367,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="icon_fulres.ico" />
+    <Content Include="modimage.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.6.3\build\Fody.targets" Condition="Exists('packages\Fody.6.6.3\build\Fody.targets')" />
