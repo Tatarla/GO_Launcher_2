@@ -19,6 +19,9 @@ namespace GOR_Launcher
             this.filePath = filePath;
             this.fileName = fileName;
             this.fileUrl = fileUrl;
+
+            if (filePath == "/")
+                this.filePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "/";
         }
 
         public string getFullName()     { return filePath + fileName; }

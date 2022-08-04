@@ -12,10 +12,10 @@ namespace GOR_Launcher
     {
         public static string DEFAULT_LANGUAGE               = "en_US";
 
-        public static string BANNER_URL                     = "http://rgc-host.ru/testLauncher/banners/testBanner-{0}.png";
-        public static string FILE_LIST_URL                  = "http://rgc-host.ru/testLauncher/";
-        public static string VERSION_FILE_URL               = "http://rgc-host.ru/testLauncher/version.xml";
-        public static string REMOTE_CONFIG_URL              = "http://rgc-host.ru/testLauncher/config.xml";
+        public static string BANNER_URL                     = "http://g2-mp.ru/files/";
+        public static string FILE_LIST_URL                  = "http://g2-mp.ru/files/";
+        public static string VERSION_FILE_URL               = "http://g2-mp.ru/files/version.xml";
+        public static string REMOTE_CONFIG_URL              = "http://g2-mp.ru/files/config.xml";
 
         public static string ADDFILES_DX11                  = "http://rgc-host.ru/testLauncher/addfiles/dx11/";
         public static string ADDFILES_CUSTOMFONTS           = "http://rgc-host.ru/testLauncher/addfiles/custom_fonts/";

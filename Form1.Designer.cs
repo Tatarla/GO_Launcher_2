@@ -234,6 +234,7 @@
             this.newsBanner.Size = new System.Drawing.Size(300, 360);
             this.newsBanner.TabIndex = 10;
             this.newsBanner.TabStop = false;
+            this.newsBanner.Visible = false;
             // 
             // serverStatusPanel
             // 
@@ -360,8 +361,8 @@
             this.Controls.Add(this.addLinksPanel);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gothic Online: ARPG";
             this.Load += new System.EventHandler(this.MainForm_Load);
