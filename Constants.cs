@@ -11,7 +11,6 @@ namespace GOR_Launcher
     public static class Constants
     {
         public static string DEFAULT_LANGUAGE               = "ru_RU";
-        public static bool   ALT_CONNECTION                 = false;
 
         public static string DEFAULT_ADDRESS                = "http://g2-mp.ru/";
         public static string ALTERNATIVE_ADDRESS            = "http://185.200.190.211/";

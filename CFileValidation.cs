@@ -13,6 +13,7 @@ namespace GOR_Launcher
     {
         static XmlDocument                  mainFileXml;
         static List<CDownloadFile>          downloadList;
+        static int                          totalDownloadFiles;
         static List<CDownloadFile>          deleteFiles;
         static WebClient                    dlClient;
         static bool                         downloadingLauncher = false;
@@ -121,7 +122,8 @@ namespace GOR_Launcher
         public static void DeleteFiles()
         {
             foreach (CDownloadFile file in deleteFiles)
-                File.Delete(file.getFullName());
+                if (File.Exists(Path.GetFullPath(file.getFullName())))
+                    File.Delete(Path.GetFullPath(file.getFullName()));
 
             deleteFiles.Clear();
             IsReady();
@@ -130,6 +132,7 @@ namespace GOR_Launcher
         // Async download start and events
         public static void StartDownlaod()
         {
+            totalDownloadFiles                 = downloadList.Count;
             dlClient                           = new WebClient();
             dlClient.DownloadProgressChanged  += new DownloadProgressChangedEventHandler(DlProgressChanged);
             dlClient.DownloadFileCompleted    += new AsyncCompletedEventHandler(DlFileCompleted);
@@ -141,7 +144,7 @@ namespace GOR_Launcher
         {
             double bytesIn      = double.Parse(e.BytesReceived.ToString());
             double totalBytes   = double.Parse(e.TotalBytesToReceive.ToString());
-            double percentage   = bytesIn / totalBytes * 100;
+            double percentage   = 100 - (Convert.ToDouble(downloadList.Count) / totalDownloadFiles * 100);
             mainForm.SetProgressBar(int.Parse(Math.Truncate(percentage).ToString()));
 
             double mbytesIn     = Math.Round((bytesIn / 1024) / 1024, 1);
