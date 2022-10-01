@@ -25,6 +25,10 @@ namespace GOR_Launcher
         {
             InitializeComponent();
             themeManager.ColorScheme = Constants.MATERIAL_DEFAULT_COLOR;
+
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
         }
 
 
