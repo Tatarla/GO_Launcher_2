@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using MaterialSkin;
 using System.IO;
 using System.Net;
+using System.Drawing.Text;
 
 namespace GOR_Launcher
 {
@@ -35,6 +36,7 @@ namespace GOR_Launcher
         private void MainForm_Load(object sender, EventArgs e)
         {
             playButton.Enabled = false;
+            
 
             // Checking connection
             CUrlManager.CheckConnection();
@@ -51,7 +53,6 @@ namespace GOR_Launcher
             // Initializing panel colors with alpha channel
             addLinksPanel.BackColor          = Constants.LINKS_PANEL_COLOR;
             newsPanel.BackColor              = Constants.NEWS_PANEL_COLOR;
-            playButton.BackColor             = Constants.PLAY_BUTTON_COLOR;
 
             nicknameBox.Text = CConfig.GetPlayerName();
 
@@ -61,7 +62,7 @@ namespace GOR_Launcher
         public void Translate()
         {
             playButton.Text         = CLocalization.Get("playButton");
-
+            
             //For some fckn reason WaterMark by itself doesn't show up hint, neither PromptText, but together they do :?
             nicknameBox.WaterMark   = CLocalization.Get("nicknameInput");
             nicknameBox.PromptText  = CLocalization.Get("nicknameInput");
@@ -105,15 +106,15 @@ namespace GOR_Launcher
         {
             if (CConfig.IsConnectionAvailable())
             {
-                serverStatusPanel.BackColor     = Constants.SERVER_STATUS_OK_COLOR;
                 serverStatusText.Text           = CLocalization.Get("serverStatusReady");
-                serverStatusIcon.IconChar       = FontAwesome.Sharp.IconChar.CheckSquare;
+                onlineCounterIcon.IconChar      = FontAwesome.Sharp.IconChar.CircleInfo;
+                onlineCounterIcon.IconColor = Constants.SERVER_STATUS_OK_COLOR;
             }
             else
             {
-                serverStatusPanel.BackColor     = Constants.SERVER_STATUS_OFF_COLOR;
                 serverStatusText.Text           = CLocalization.Get("serverStatusOffline");
-                serverStatusIcon.IconChar       = FontAwesome.Sharp.IconChar.Warning;
+                onlineCounterIcon.IconChar      = FontAwesome.Sharp.IconChar.Warning;
+                onlineCounterIcon.IconColor = Constants.SERVER_STATUS_OFF_COLOR;
             }
         }
 
@@ -178,6 +179,11 @@ namespace GOR_Launcher
             System.Diagnostics.Process.Start(Constants.WEBSITE_LINK);
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Constants.VK_LINK);
+        }
+
         private void nicknameBox_TextChanged(object sender, EventArgs e)
         {
             CConfig.UpdateNickname(nicknameBox.Text);
@@ -194,6 +200,11 @@ namespace GOR_Launcher
 
             CConfig.UpdateRegistry();
             G2O_Run(CConfig.GetVersion().Major, CConfig.GetVersion().Minor, CConfig.GetVersion().Build);
+        }
+
+        private void mainToolBox_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

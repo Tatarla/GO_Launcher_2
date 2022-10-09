@@ -60,7 +60,7 @@
             this.languageSelectBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.languageSelectBox.IntegralHeight = false;
             this.languageSelectBox.ItemHeight = 29;
-            this.languageSelectBox.Location = new System.Drawing.Point(180, 89);
+            this.languageSelectBox.Location = new System.Drawing.Point(120, 89);
             this.languageSelectBox.MaxDropDownItems = 4;
             this.languageSelectBox.MouseState = MaterialSkin.MouseState.OUT;
             this.languageSelectBox.Name = "languageSelectBox";
@@ -76,7 +76,7 @@
             this.languageSelectLabel.AutoSize = true;
             this.languageSelectLabel.Depth = 0;
             this.languageSelectLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.languageSelectLabel.Location = new System.Drawing.Point(16, 100);
+            this.languageSelectLabel.Location = new System.Drawing.Point(16, 93);
             this.languageSelectLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.languageSelectLabel.Name = "languageSelectLabel";
             this.languageSelectLabel.Size = new System.Drawing.Size(76, 19);
@@ -92,7 +92,7 @@
             this.resolutionBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.resolutionBoxX.HideSelection = true;
             this.resolutionBoxX.LeadingIcon = null;
-            this.resolutionBoxX.Location = new System.Drawing.Point(180, 171);
+            this.resolutionBoxX.Location = new System.Drawing.Point(120, 130);
             this.resolutionBoxX.MaxLength = 5;
             this.resolutionBoxX.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxX.Name = "resolutionBoxX";
@@ -119,7 +119,7 @@
             this.resolutionLabel.AutoSize = true;
             this.resolutionLabel.Depth = 0;
             this.resolutionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.resolutionLabel.Location = new System.Drawing.Point(16, 182);
+            this.resolutionLabel.Location = new System.Drawing.Point(16, 147);
             this.resolutionLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.resolutionLabel.Name = "resolutionLabel";
             this.resolutionLabel.Size = new System.Drawing.Size(80, 19);
@@ -135,7 +135,7 @@
             this.resolutionBoxY.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.resolutionBoxY.HideSelection = true;
             this.resolutionBoxY.LeadingIcon = null;
-            this.resolutionBoxY.Location = new System.Drawing.Point(280, 171);
+            this.resolutionBoxY.Location = new System.Drawing.Point(220, 130);
             this.resolutionBoxY.MaxLength = 5;
             this.resolutionBoxY.MouseState = MaterialSkin.MouseState.OUT;
             this.resolutionBoxY.Name = "resolutionBoxY";
@@ -161,7 +161,7 @@
             // 
             this.windowedModeSwitch.AutoSize = true;
             this.windowedModeSwitch.Depth = 0;
-            this.windowedModeSwitch.Location = new System.Drawing.Point(312, 233);
+            this.windowedModeSwitch.Location = new System.Drawing.Point(252, 178);
             this.windowedModeSwitch.Margin = new System.Windows.Forms.Padding(0);
             this.windowedModeSwitch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.windowedModeSwitch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -176,7 +176,7 @@
             this.windowedModeLabel.AutoSize = true;
             this.windowedModeLabel.Depth = 0;
             this.windowedModeLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.windowedModeLabel.Location = new System.Drawing.Point(16, 242);
+            this.windowedModeLabel.Location = new System.Drawing.Point(16, 187);
             this.windowedModeLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.windowedModeLabel.Name = "windowedModeLabel";
             this.windowedModeLabel.Size = new System.Drawing.Size(79, 19);
@@ -187,7 +187,7 @@
             // 
             this.musicSlider.Depth = 0;
             this.musicSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.musicSlider.Location = new System.Drawing.Point(245, 286);
+            this.musicSlider.Location = new System.Drawing.Point(185, 218);
             this.musicSlider.MouseState = MaterialSkin.MouseState.HOVER;
             this.musicSlider.Name = "musicSlider";
             this.musicSlider.ShowText = false;
@@ -202,7 +202,7 @@
             this.musicVolumeLabel.AutoSize = true;
             this.musicVolumeLabel.Depth = 0;
             this.musicVolumeLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.musicVolumeLabel.Location = new System.Drawing.Point(16, 295);
+            this.musicVolumeLabel.Location = new System.Drawing.Point(16, 218);
             this.musicVolumeLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.musicVolumeLabel.Name = "musicVolumeLabel";
             this.musicVolumeLabel.Size = new System.Drawing.Size(104, 19);
@@ -213,7 +213,7 @@
             // 
             this.soundSlider.Depth = 0;
             this.soundSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.soundSlider.Location = new System.Drawing.Point(245, 332);
+            this.soundSlider.Location = new System.Drawing.Point(185, 264);
             this.soundSlider.MouseState = MaterialSkin.MouseState.HOVER;
             this.soundSlider.Name = "soundSlider";
             this.soundSlider.ShowText = false;
@@ -228,7 +228,7 @@
             this.soundVolumeLabel.AutoSize = true;
             this.soundVolumeLabel.Depth = 0;
             this.soundVolumeLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.soundVolumeLabel.Location = new System.Drawing.Point(16, 341);
+            this.soundVolumeLabel.Location = new System.Drawing.Point(16, 264);
             this.soundVolumeLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.soundVolumeLabel.Name = "soundVolumeLabel";
             this.soundVolumeLabel.Size = new System.Drawing.Size(107, 19);
@@ -239,7 +239,7 @@
             // 
             this.mouseSlider.Depth = 0;
             this.mouseSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mouseSlider.Location = new System.Drawing.Point(245, 378);
+            this.mouseSlider.Location = new System.Drawing.Point(185, 310);
             this.mouseSlider.MouseState = MaterialSkin.MouseState.HOVER;
             this.mouseSlider.Name = "mouseSlider";
             this.mouseSlider.ShowText = false;
@@ -254,7 +254,7 @@
             this.mouseSensitivityLabel.AutoSize = true;
             this.mouseSensitivityLabel.Depth = 0;
             this.mouseSensitivityLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mouseSensitivityLabel.Location = new System.Drawing.Point(16, 387);
+            this.mouseSensitivityLabel.Location = new System.Drawing.Point(16, 310);
             this.mouseSensitivityLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.mouseSensitivityLabel.Name = "mouseSensitivityLabel";
             this.mouseSensitivityLabel.Size = new System.Drawing.Size(128, 19);
@@ -269,12 +269,12 @@
             this.validateFilesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.validateFilesButton.HighEmphasis = true;
             this.validateFilesButton.Icon = null;
-            this.validateFilesButton.Location = new System.Drawing.Point(3, 474);
+            this.validateFilesButton.Location = new System.Drawing.Point(3, 393);
             this.validateFilesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.validateFilesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.validateFilesButton.Name = "validateFilesButton";
             this.validateFilesButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.validateFilesButton.Size = new System.Drawing.Size(374, 36);
+            this.validateFilesButton.Size = new System.Drawing.Size(314, 36);
             this.validateFilesButton.TabIndex = 13;
             this.validateFilesButton.Text = "Run file validation";
             this.validateFilesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -287,7 +287,7 @@
             this.altConnectionLabel.AutoSize = true;
             this.altConnectionLabel.Depth = 0;
             this.altConnectionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.altConnectionLabel.Location = new System.Drawing.Point(16, 438);
+            this.altConnectionLabel.Location = new System.Drawing.Point(16, 362);
             this.altConnectionLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.altConnectionLabel.Name = "altConnectionLabel";
             this.altConnectionLabel.Size = new System.Drawing.Size(162, 19);
@@ -298,7 +298,7 @@
             // 
             this.altConnectionSwitch.AutoSize = true;
             this.altConnectionSwitch.Depth = 0;
-            this.altConnectionSwitch.Location = new System.Drawing.Point(312, 429);
+            this.altConnectionSwitch.Location = new System.Drawing.Point(252, 353);
             this.altConnectionSwitch.Margin = new System.Windows.Forms.Padding(0);
             this.altConnectionSwitch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.altConnectionSwitch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -312,7 +312,7 @@
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(380, 513);
+            this.ClientSize = new System.Drawing.Size(320, 432);
             this.Controls.Add(this.altConnectionSwitch);
             this.Controls.Add(this.altConnectionLabel);
             this.Controls.Add(this.validateFilesButton);

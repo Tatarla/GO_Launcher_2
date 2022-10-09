@@ -133,16 +133,16 @@
     <value>Никнейм</value>
   </data>
   <data name="onlinePlayers" xml:space="preserve">
-    <value>Игроков онлайн:</value>
+    <value>В игре:</value>
   </data>
   <data name="playButton" xml:space="preserve">
-    <value>Играть</value>
+    <value>В игру</value>
   </data>
   <data name="serverStatusOffline" xml:space="preserve">
-    <value>Сервер временно недоступен!</value>
+    <value>Сервер недоступен</value>
   </data>
   <data name="serverStatusReady" xml:space="preserve">
-    <value>Сервер активен и доступен для подключения!</value>
+    <value>Сервер включен</value>
   </data>
   <data name="settings_altConnection" xml:space="preserve">
     <value>Альтернативное подключение:</value>
@@ -154,16 +154,16 @@
     <value>Язык:</value>
   </data>
   <data name="settings_musvolume" xml:space="preserve">
-    <value>Громкость музыки:</value>
+    <value>Музыка:</value>
   </data>
   <data name="settings_resolution" xml:space="preserve">
-    <value>Разрешение экрана:</value>
+    <value>Разрешение:</value>
   </data>
   <data name="settings_sensitivity" xml:space="preserve">
-    <value>Чувствительность мыши:</value>
+    <value>Чувствительность:</value>
   </data>
   <data name="settings_sndvolume" xml:space="preserve">
-    <value>Громкость звуков:</value>
+    <value>Звук:</value>
   </data>
   <data name="settings_validation" xml:space="preserve">
     <value>ЗАПУСТИТЬ ПРОВЕРКУ ФАЙЛОВ</value>

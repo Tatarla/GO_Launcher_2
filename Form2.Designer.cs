@@ -115,7 +115,7 @@
             this.addNoGrassLabel.AutoSize = true;
             this.addNoGrassLabel.BackColor = System.Drawing.Color.Transparent;
             this.addNoGrassLabel.Depth = 0;
-            this.addNoGrassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addNoGrassLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.addNoGrassLabel.Location = new System.Drawing.Point(11, 158);
             this.addNoGrassLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.addNoGrassLabel.Name = "addNoGrassLabel";
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 320);
+            this.ClientSize = new System.Drawing.Size(320, 197);
             this.Controls.Add(this.addNoGrassSwitch);
             this.Controls.Add(this.addNoGrassLabel);
             this.Controls.Add(this.addFontsSwitch);

@@ -25,6 +25,7 @@ namespace GOR_Launcher
 
         public static string DISCORD_LINK                   = "https://discord.gg/JNqbr3TBjH";
         public static string WEBSITE_LINK                   = "https://g2-mp.ru/";
+        public static string VK_LINK                        = "https://vk.com/g2_mp";
 
         // DO NOT change that if you dont know what it is
         public static string G2O_API_URL                    = "http://api.gothic-online.com.pl/master/server/{0}/";
@@ -35,11 +36,11 @@ namespace GOR_Launcher
         public static string GAME_EXEC                      = "System/Gothic2.exe"; 
         public static string G2O_EXEC                       = "G2O_Proxy.dll"; 
 
-        public static Color LINKS_PANEL_COLOR               = Color.FromArgb(100, 40, 47, 99);
-        public static Color NEWS_PANEL_COLOR                = Color.FromArgb(100, 0, 0, 0);
-        public static Color SERVER_STATUS_OK_COLOR          = Color.FromArgb(50, 0, 255, 0);
-        public static Color SERVER_STATUS_OFF_COLOR         = Color.FromArgb(50, 255, 255, 0);
-        public static Color PLAY_BUTTON_COLOR               = Color.FromArgb(255, 40, 47, 99);
+        public static Color LINKS_PANEL_COLOR               = Color.FromArgb(99, 40, 47, 99);
+        public static Color NEWS_PANEL_COLOR                = Color.FromArgb(99, 0, 0, 0);
+        public static Color SERVER_STATUS_OK_COLOR          = Color.FromArgb(99, 0, 255, 0);
+        public static Color SERVER_STATUS_OFF_COLOR         = Color.FromArgb(99, 255, 255, 0);
+        public static Color PLAY_BUTTON_COLOR               = Color.FromArgb(99, 40, 47, 99);
         public static ColorScheme MATERIAL_DEFAULT_COLOR    = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
     }
 }
