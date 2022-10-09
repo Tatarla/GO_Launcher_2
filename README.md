@@ -1,6 +1,6 @@
 # Lancher for your Gothic 2 Online server
 
-![main launcher](https://i.imgur.com/Zu21dvb.png)
+![main launcher](https://i.imgur.com/HN6Oh1h.png)
 ![add content](https://i.imgur.com/8fUk37P.png)
 ![settings](https://i.imgur.com/YKiVZQk.png)
 
